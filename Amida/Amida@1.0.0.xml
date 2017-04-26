@@ -1470,7 +1470,7 @@ body {
 </div>
 </div>
 	</b:includable>
-    <b:includable id='description'><p><data:description/> <span>v1.0.0</span></p></b:includable>
+    <b:includable id='description'><p><data:description/></p></b:includable>
     <b:includable id='logo'>
 		<a expr:href='data:blog.homepageUrl' expr:title='data:title'>
 			<img expr:alt='data:title' expr:height='data:height' expr:src='data:sourceUrl' expr:width='data:width'/>
