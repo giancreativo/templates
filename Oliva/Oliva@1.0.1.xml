@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:css='false' b:defaultwidgetversion='1' b:layoutsVersion='2' b:responsive='true' b:version='2' class='theme' lang='es' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<html b:css='false' b:defaultwidgetversion='1' b:layoutsVersion='2' b:responsive='true' b:version='2' lang='es' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
 
 <!-- Canvas.xml v1.1.40 -->
 <head>
@@ -1109,7 +1109,7 @@ width: 100%;
 => Author URI: https://fb.com/gianfranco.imperialevivas
 => License: Creative Commons Reconocimiento-NoComercial 4.0 Internacional
 => License URI: http://creativecommons.org/licenses/by-nc/4.0/
-=> Versión Paga -(Puedes activar la version DARK)-
+=> Versión Free (Gratis)
 */
 /*Deleted: unnecessary elements*/
 .singleton-element:not(.cookie-choices-info),
@@ -1120,119 +1120,8 @@ width: 100%;
 /*Design: admin blog*/
 body#layout .left {float: left;width: 50%;}
 body#layout .right {float: right;width: 50%;}
-
-/**
-* 1. Css del skin oscuro (dark)
-*/
-.dark footer a,
-.dark footer a:hover,
-.dark footer a:active,
-.dark footer a:focus {
-    color:rgb(255,255,255);
-}
-.dark body{
-  background: rgba(0,0,0,0.7);
-  background-image: url(https://4.bp.blogspot.com/-2WxnhgsmSJk/WQ5R89xrL_I/AAAAAAAACew/RsqBZUhtAwMyh90rVSyMzqm9o5DSJ3kQgCLcB/s1600/bg-3.png); /* 1 */
-  background-repeat: repeat; /* => 1.1 */
-  background-position: top center;
-}
-.dark div#Blog1, .dark header, .dark .buscador .widget .widget-content, .dark .publicidad .widget .widget-content, .dark footer, .dark article, .dark .comentarios{
-  background: rgba(48, 48, 48, 0.85)
-}
-.dark h3.title, .dark .buscador .widget h2, .dark .publicidad .widget h2, .dark aside h2{
-  background: rgba(37, 37, 37, 1);
-  border-color: rgba(255, 255, 255, 1);
-}
-.dark .header, .dark .load_data{
-  background: rgba(37, 37, 37, 1);
-}
-.dark .header{
-  border-color: rgba(255, 255, 255, 0.6);
-}
-.dark .load_data time{
-  background: rgba(255, 255, 255, 0.16);
-}
-
-.dark aside .widget, .dark .buscador .widget, .dark .publicidad .widget{
-  background: rgba(48, 48, 48, 0.85)
-}
-.dark h3.title, .dark .logo a{
-  color: rgba(255, 255, 255, 1)
-}
-.dark .menu a{
-  background: rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.84);
-}
-.dark .menu .active{
-  background:  rgba(0, 0, 0, 0.2);
-}
-.dark article .content, .dark article .content blockquote{
-  color:rgba(255,255,255,0.7);
-}
-
-.dark .reformar time, .dark article .content, .dark .share a {
-  color:rgba(255,255,255,1);
-}
-
-.dark .blog-pager a {
-  background: rgba(37, 37, 37, 1);
-}
-
-.dark  article .content h1, .dark  article .content h2, .dark  article .content h3, .dark  article .content h4, .dark  article .content h5, .dark  article .content h6 {
-	color: rgba(255, 255, 255, 0.7);
-}
-.dark .buscador .tags a,.dark .publicidad .tags a{
-  background: rgba(0, 0, 0, 0.15);
-}
-.dark .buscador .tags a:nth-child(2n+1), .dark .publicidad .tags a:nth-child(2n+1){
-    background:rgba(0, 0, 0, 0.2);
-}
-
-.dark .blog{
-background: rgba(48, 48, 48, 0.85);
-width:100%;
-}
-.dark .error {
-    color: rgba(255, 255, 255, 0.75);
-    text-align: center;
-}
-.dark .comments .comment-block {
-    min-height: 80px;
-    margin: 0 0 1rem 7rem;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-}
-.dark .comment-content {
-    margin: 0;
-    padding: .5rem 0;
-    color: #7C7B7B;
-    line-height: 1.6rem;
-}
-.dark .deleted-comment {
-    background: #7C7B7B;
-}
-.dark .thread-toggle a {
-	background-image: url('https://3.bp.blogspot.com/-nhydR8BWNx4/WVTq7twSw9I/AAAAAAAAA1g/3JScNeXsgs0oO7X6gL4UHBLVxqc1fkzWwCLcBGAs/s000/open.png');
-}
-
-.dark .thread-toggle.thread-expanded a {
-    background-image: url('https://1.bp.blogspot.com/-GiD5nk3K6jE/WVTrTGcLi5I/AAAAAAAAA1k/xQDLmf5SufEjS8v2OXUQqdjwAVAULAy9QCLcBGAs/s000/close.png');
-}
-@media only screen and (max-width: 890px) {
-.dark .menu a{
-  background: rgba(0, 0, 0,0.4);
-}}
 ]]></b:skin>
 
-
-<b:if cond='data:view.isPost or data:view.isPage'>
-<style type='text/css'>/*<![CDATA[*/
-.dark div#Blog1{
-  background: transparent;
-  box-shadow: none;
-}
-/*]]>*/</style>
-</b:if>
 &lt;!--</head>--&gt;&lt;/head&gt;
 
 <body>
