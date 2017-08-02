@@ -1,0 +1,1747 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:css='false' b:defaultwidgetversion='1' b:layoutsVersion='2' b:responsive='true' b:version='2' class='theme' lang='es' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+
+<!-- Canvas.xml v1.1.40 -->
+<head>
+
+<!-- Datos generales -->
+<meta content='es' name='DC.Language'/>
+<meta expr:charset='data:blog.encoding'/>
+<meta content='blogger' name='generator'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<b:tag cond='data:view.isHomepage' content='blog' name='meta' property='og:type'/>
+<b:tag cond='data:view.isPost' content='article' name='meta' property='og:type'/>
+
+<!-- Responsive -->
+<meta content='width=device-width,minimum-scale=1,initial-scale=1' name='viewport'/>
+
+<!--/// Cambia estos valores por los tuyos
+========================================================================== ///-->
+
+<link href='https://plus.google.com/IDpaginaGoogle' rel='Publisher'/>
+<meta content='@blogger' name='twitter:site'/>
+<meta content='@google' name='twitter:creator'/>
+<meta content='TuNombre' name='DC.Creator'/>
+
+<!-- Enlace Canonico -->
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<meta expr:content='data:blog.canonicalUrl' name='twitter:url'/>
+<!-- Link rel=canonical -->
+<link expr:href='data:blog.canonicalUrl' rel='canonical'/>
+
+<!-- Descripcion -->
+<b:if cond='data:blog.metaDescription'>
+   <meta expr:content='data:blog.metaDescription' property='og:description'/>
+   <meta expr:content='data:blog.metaDescription' name='description'/>
+   <meta expr:content='data:blog.metaDescription' name='twitter:description'/>
+   <meta expr:content='data:blog.metaDescription' name='DC.description'/>
+<b:elseif cond='data:view.isSingleItem'/>
+   <meta expr:content='data:blog.pageName + &quot; : Entra para leer el articulo completo.&quot;' name='twitter:description'/>
+</b:if>
+
+<!-- Robots solo en Post y MultipleItems -->
+<b:if cond='data:view.isArchive'>
+   <meta content='noindex,nofollow' name='robots'/>
+<b:else/>
+   <b:if cond='data:view.isError'>
+      <meta content='noindex,nofollow' name='robots'/>
+   <b:else/>
+      <b:if cond='data:view.isMultipleItems'>
+         <b:if cond='data:view.isHomepage'>
+            <b:if cond='data:blog.isMobile'>
+               <meta content='noindex,noarchive' name='robots'/>
+            <b:else/>
+			   <meta content='index,follow' name='robots'/>
+            </b:if>
+            <meta content='noodp,noydir' name='robots'/>
+         <b:else/>
+            <meta content='noindex,nofollow' name='robots'/>
+         </b:if>
+      <b:else/>
+         <b:if cond='data:blog.isMobile'>
+            <meta content='noindex,noarchive' name='robots'/>
+         <b:else/>
+			<meta content='index,follow' name='robots'/>
+         </b:if>
+         <meta content='noodp,noydir' name='robots'/>
+      </b:if>
+   </b:if>
+</b:if>
+
+<!-- Optimizando los post -->
+<b:if cond='data:view.isPost'>
+   <!-- La primera imagen del post -->
+   <b:if cond='data:blog.postImageUrl'>
+      <link expr:href='data:blog.postImageUrl' rel='image_src'/>
+      <meta expr:content='data:blog.postImageUrl' name='twitter:image'/>
+      <meta expr:content='data:blog.postImageUrl' property='og:image'/>
+   </b:if>
+</b:if>
+
+<!-- Optimizando Titulos -->
+<meta expr:content='data:blog.title' name='DC.Publisher'/>
+<b:if cond='data:view.isError'>
+   <title>Error 404 en <data:blog.pageTitle/></title>
+<b:else/>
+   <b:if cond='data:blog.url != data:blog.homepageUrl'>
+      <meta expr:content='data:blog.pageName' property='og:title'/>
+      <meta expr:content='data:blog.pageName' name='twitter:title'/>
+      <meta expr:content='data:blog.pageName' name='DC.title'/>
+      <b:if cond='data:blog.pageName'>
+         <title><data:blog.pageName/></title>
+      <b:else/>
+         <title><data:blog.pageTitle/></title>
+      </b:if>
+   <b:else/>
+      <meta expr:content='data:blog.pageTitle' property='og:title'/>
+      <meta expr:content='data:blog.pageTitle' name='twitter:title'/>
+      <meta expr:content='data:blog.pageTitle' name='DC.title'/>
+      <title><data:blog.pageTitle/></title>
+   </b:if>
+</b:if>
+
+<!-- Fin de etiquetas meta -->
+
+<!-- Incluimos los datos de blogger -->
+<!-- favicon -->
+<b:tag cond='data:blog.blogspotFaviconUrl' expr:href='data:blog.blogspotFaviconUrl' name='link' rel='icon' type='image/x-icon'/>
+
+<!-- feeds -->
+<b:tag cond='data:blog.feedLinks' expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' name='link' rel='alternate' type='application/atom+xml'/>
+<b:tag cond='data:blog.feedLinks' expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' name='link' rel='alternate' type='application/rss+xml'/>
+
+<!-- schema ld+json -->
+<script type='application/ld+json'>
+{&quot;@context&quot;:&quot;http://schema.org&quot;,&quot;@type&quot;:&quot;WebSite&quot;,&quot;name&quot;:&quot;<data:blog.title/>&quot;,&quot;url&quot;:&quot;<data:blog.homepageUrl/>&quot;,&quot;potentialAction&quot;:{&quot;@type&quot;:&quot;SearchAction&quot;,&quot;target&quot;:&quot;<data:blog.homepageUrl/>search?q={search_term_string}&quot;,&quot;query-input&quot;:&quot;required name=search_term_string&quot;}}
+</script>
+
+<!-- HTML5 para IE9 -->
+<!--[if lt IE 9]>
+   <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<![endif]-->
+<!-- Fin de datos-->
+
+<style type='text/css'>/*<![CDATA[*/
+/*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}img,legend{max-width:100%}audio,canvas,img,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{padding:0;box-sizing:border-box}*,::after,::before,legend{box-sizing:border-box}a,table{background-color:transparent}.embed,sub,sup{position:relative}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}h1{font-size:2em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{-webkit-text-decoration-skip:objects;color:#2196f3;text-decoration:none}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none;vertical-align:middle}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}body{margin:0;font-family:"Helvetica Neue",arial,sans-serif;font-size:1rem;font-weight:400;overflow-x:hidden}a:focus,a:hover{color:#1565c0;text-decoration:underline}a:active,a:hover{outline-width:0}ol,ul{padding-left:2rem}ol,ol li,ul,ul li{margin:0;list-style:none}h1,h2,h3,h4,h5,h6{font-weight:500;margin:0}h2{font-size:1.5rem}h3{font-size:1.4rem}h4{font-size:1.3rem}h5{font-size:1.2rem}h6{font-size:1.1rem}table{border-spacing:0;border-collapse:collapse}[role=button],a,button,input,label,select,textarea{touch-action:manipulation}p{margin:0}.none{display:none!important}.no-style{background:none;padding:0;margin:0;border:0;outline:0;box-shadow:0 0 transparent;font:inherit}.center{display:block;margin-left:auto;margin-right:auto}.center-text{text-align:center}.clearfix::after{display:block;content:"";clear:both}.flex{display:-webkit-box;display:-ms-flexbox;display:flex}.wrap{-ms-flex-wrap:wrap;flex-wrap:wrap}.wrap-reverse{-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse}.column{-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.column-reverse{-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.row,.row-reverse{-webkit-box-orient:horizontal}.row{-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.row-reverse{-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.order-first{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.order-last{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}.no-order{-webkit-box-ordinal-group:1;-ms-flex-order:0;order:0}.justify-content-center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.justify-content-end{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.justify-content-start{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.justify-content-around{-ms-flex-pack:distribute;justify-content:space-around}.justify-content-between{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.align-content-center{-ms-flex-line-pack:center;align-content:center}.align-content-end{-ms-flex-line-pack:end;align-content:flex-end}.align-content-start{-ms-flex-line-pack:start;align-content:flex-start}.align-content-around{-ms-flex-line-pack:distribute;align-content:space-around}.align-content-between{-ms-flex-line-pack:justify;align-content:space-between}.align-content-stretch{-ms-flex-line-pack:stretch;align-content:stretch}.align-items-baseline{-webkit-box-align:baseline;-ms-flex-align:baseline;align-items:baseline}.align-items-center{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.align-items-end{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.align-items-start{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.align-items-stretch{-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}.align-self-auto{-ms-flex-item-align:auto;-ms-grid-row-align:auto;align-self:auto}.align-self-baseline{-ms-flex-item-align:baseline;align-self:baseline}.align-self-center{-ms-flex-item-align:center;-ms-grid-row-align:center;align-self:center}.align-self-end{-ms-flex-item-align:end;align-self:flex-end}.align-self-start{-ms-flex-item-align:start;align-self:flex-start}.align-self-stretch{-ms-flex-item-align:stretch;-ms-grid-row-align:stretch;align-self:stretch}.button{display:inline-block;white-space:nowrap;font-weight:400;line-height:1.25;user-select:none;font-size:100%;padding:.6em 1em;text-decoration:none!important;color:rgba(0,0,0,.5);cursor:pointer;vertical-align:middle}embed,iframe,object{margin:0;padding:0;border:0;outline:0}.embed{padding-bottom:56.25%;height:0}.embed embed,.embed iframe,.embed object,.embed video{width:100%;height:100%;position:absolute;top:0;bottom:0;left:0}.table{display:block;width:100%;overflow-x:auto}.container{margin-right:auto;margin-left:auto;padding-left:1rem;padding-right:1rem}.drop-menu{font-size:0}.drop-menu,.drop-menu li,.drop-menu ul{padding:0;margin:0}.drop-menu li{position:relative}.drop-menu a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;font-size:1rem}.drop-menu ul{visibility:hidden;max-height:0}@media (max-width:991px){.drop-menu ul.is-open{visibility:visible;max-height:1280px}}@media (min-width:992px){.drop-menu>li{display:inline-block}.drop-menu ul{text-align:left;top:0;left:100%;position:absolute}.drop-menu>li>ul{top:100%;left:0}.drop-menu li:hover>ul{visibility:visible;max-height:1280px}.drop-menu ul .is-parent::after{transform:rotate(-45deg)}}.left{float:left}.right{float:right}
+/*]]>*/</style>
+
+<style type='text/css'>/*<![CDATA[*/
+/* => GLOBAL */
+[class*=" icon-"]:before,[class^=icon-]:before,[data-icon]:before{font-family:Oliva!important;font-style:normal!important;font-weight:400!important;font-variant:normal!important;text-transform:none!important;speak:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@font-face{font-family:Oliva;src:url(data:application/font-woff;base64,d09GRk9UVE8AAD0AAAsAAAAAUewAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAABCAAAOGYAAEtUNUW1l0ZGVE0AADlwAAAAGgAAABx3hb7kR0RFRgAAOYwAAAAdAAAAIACOAARPUy8yAAA5rAAAAEoAAABgUblOQmNtYXAAADn4AAABJwAAAg53CFlmaGVhZAAAOyAAAAAuAAAANgxCXRFoaGVhAAA7UAAAAB4AAAAkBAwB3mhtdHgAADtwAAAAkgAAAMYKLgV3bWF4cAAAPAQAAAAGAAAABgBhUABuYW1lAAA8DAAAAOIAAAHjtFXrwHBvc3QAADzwAAAAEAAAACAAAwABeJydvAl8HNWVL6xWXN0XQxyS52Igk0gQCEuMAYNDAiRATAgJhiQ4DpuxsSzJkq2lJXVLrd6XWrtPd21dvWuXtXiVtxibLUAMycQsEzABkgmTPe99TCZ5X5JfaV7xfvPOrZYI5Ptm3vu9LvVSt27duts55/8/91y5GlasaHC5XOcP9vp3+bvb29bu9Pb6165rcDU2uBq+tBhsXAx9aPHCFdnzXHDeh+C8FU0rGy761sf+HeC9H+d5NmQWTy2azCc+9KePfKKh4fxPrDj+0U80XPSJuzd9rGE7LeZjDR9vuKphXcPnGm5puLXhzobNDVsbWho6GroafA3BBmjQG0Yaphr2NhxqeLLhdMOPG37W8MuG3zf8xcW4Pua60HWx6wrXta4bXbe4bnfd5fqW6yHXI64Ol9817Iq4eJfsyrmKrlHXpGuv65DriOs7ridcz7iecz3v+oHrjOtV1xuuX7recf3Rteh6t3FF40cb/66xufFTjWsar2u8sfGWxlsb72r8ZuP9jY82tjV2NvY2DjaGG5ONcqPaWGwcb5xpPNz43caXd7a0tu/wervWenfu3NW6q6V7OeG9C77+wZaB9o5d/s7BHWuvr3/7Wzp8+PYHdvn97QNLX2tbdw20Yi8vn67r9Pa00/fadYO+9gH6XtvS1ub3Dvi8vg6vt6O7fW1f96Bv+QlOSl/LLhyiHZi7s6+9t3VXd6u3p6e919/a7W3two/BtrVt3kBvt7elDVNa/Lu8vUs51rbt8rUO+nw0hWZe6+1sbxnw97QMdK2t19rb6vfSZvm8tKFr+/BJ7QPtPv/S+VLTBnt2dA8sNXfdjm5vR0f7wPIjg95B/+CO9j5v32Bfm7e3ZaC1paevpbeltROrjbX2drX3+vCprZ3twfY2b3d3y8DaHbu6u7t39XatbR/Gx/W2OCe0Z+mb1q7V57sBs2N/0fruaG/xd+7yYS8FsYsHhtoHaIvw3NvtC7X0de/qwj4K9rV072jZ1TYYuKHV29HVHtzhb23b1dLj7W3Dd3uwdaC9bZd/bWvLQNtS8tp1HS1D7d2Bzha/r6Wvb2d3S8dOb3cbDol3+Rv7e/lkKWnd8Np1LTiWvbSb27z+tTfs7N7V2jXg68TxGsCu7qWzYKC9x9+OI9eJT27tHMABb2vHbLu8gzgeO9qdD2cmrWsb8Pbt8A778aszuCPYsatlaajW1b+ur3/dsFRuS88AnrYvj0+wvbvvbyT5bwW7ocElodSkXRkXuLIoPYpLdWku3WW48i7TVUBpKrnKroqr6qq5RlCyxlzjrgmUrynXtGuPa8Y165pzzaO07XPtdx1wHUSpW2hgXIdR9o66jrmOowSecD3mOuk65Xq84SGUxiddT7medn0XpfJZlMvvuU6jbL7g+j7K5z+4fogy+qLrJdfLrldc/+j6Ecrra66zrtddP0a5fdP1lusnrp+6/sn1M9fbrn92/dz1C5TlX7l+3dBClUpjQ7zhlOuzjeMrvsbcyrzq7vd83nOEXEC2nPPRc364su+8j374p6tKH7nwI3d+JHv+zed7z3/mo/s+duPH3v4vQ6s/svoQe8EFxb8778IrLnzowu9fpH48+InsJ29v+nIze3Hq4oOfuvmyCy4TLzv66YnLZ694+8qGK9dfed+Vr135zlXcZypr7l7zj2t7r7nt2tp1g+si1196/dH18zeef+PAjW987uef3/r59s+/ddOlN52+6Y83T97yyVv+/QvRL973RelW8bZzbivd/qEv3bDhug0PbkjfQe7oveOtL7+5avGBRS/77sfdPAhpSRSltAA8effjHuBzgiapop42gFg7rVs3vXT6STfM5Seq1Vpt3JiBSRjJlDLkG52eGHAy3irKHCRIy0ue1Nc2Adi3WiuAMUDPqZqm5nQwyCIWa6R1UZU0IccDWbW4elFnw7mhrBd2Q18yMDwcSPZBB7l3w41n7e5fWt1nPcWffw7gWQYqSkE3NKOojAA56V61+Emstj3r9sMwF8YXNwx+Ys96wJ8froVr4TFuCqt99f9NtZ8FZgrG8jV85cdgilhY6hQ3hoXWhvN+WmuvZbJwLHU4cCBwsH9m1/ju8Z1mK7TCztTuwK5Afz9+7E7thFYCWyrbZ9vn2hf6Tka1jAo5JZfLKaCQmidjgoldImQYKSMAPfgsPQRF0ARV0mWDpA0mrcqapIm6pEg5ks4xmWwmm8Z3Jgf4SV+5rJJVgWgZRs1oaU3SMTsWwWmCjr+xt4EealbLqjk1R3IltZA3EtlkjsulFDy0lM7pQl4wxIJUlkrpCtQITOXHqzV+FMbMSS2bzxSlopiXNTxUWUmPaqO5MSBjMJoeFUnRYAzV1ApKQc1ntYw5CMN8sBrOB8AP4XRUiklxMSlwROA5ISWkxJSMRzqVTmQKnBaFIPm6B+SsnEsrsgJa9mRlYXbuyOyRygl4gqyytlo3sWBk8um8nJcMwRB0QeGAA14WBIGX+DQncxk8JcBlOYXLcSqv87pgyHnIg67oum6ohpLP5bOYQKyNF9DCZCyuXhjvFCYsFSZz6b8WlsPi6oXpTmHGUmG5vFIv7NQFEJIjQpyP8ckkn+LjQkyKSlE5nomloxAGssUdhijEcvFsVImqMTWup4ykwRf4slCSqzACk8Z4uUbKtdH8JM6F0fS8VElXMzWoQTVbyc2rY7k8ztZRrhwm5bARgEFy5ikWTsaO9O/TqkqNliCOJ8cDEJTCfJgLJQLhfr1f8QLphh7ZywdqwVI4HzGC6hAkAyIWACElrIX7e2LtsI1Aq95d8unxfKKYLKSKXFnAQyzLZakq19K1dIWKyXH3CNankq1ma7lRZUypaRW9opXNcqFcLJSNSmla3wfHcKQaF1ezkJRSPL5SUhKSkFJ5gzdkEwpQUEwDX6ZaAFIAU8J0Xk1BkljP2zjABcnkDWJvt7YzXD6lx7WYlsglgdjnupMoozzP4TBjbvtcDyRzCQ0z6Kk8T6ztdgtj8KaMTwAcF4NYF1uXMIah5qFALNcFUJCdkluwZD6fxJLj9ZI3ugtQTJfEklgQDI5YLfZ2LEjBKkFS5nie2H9v/z2ji5qooQjqGR0fYCoGPuAS5wEKfcAq66b/oNGS02j1P2r0aafR8gcaHVuu2lKjsRL/aaPzchEnjfm+RtfrtJhYvJwN8sPisDxRrowak4HEEB+Qhsf9phf6wJ8aHh4OpvzQR2c56vibc187eP+ZVFgK45zdVembD4SzES2ukwzqUiNQCVaDo4kpkUunMikqK1k5qweK4ZF4LT7GT2RIZ19rbBsk8JKYPdn7ZPQ5+B48WTkxd2Ju/6GJ4+PHCyfgMVLyoD4ZKY9il5mLGfYu2OR7eMuWLb774C64a3rTEw8/ueW07xV4BZ6ffuKJJ56cPg2vEHjF9/yWJ7Y8cd/0XUD+YG9lBQ90xLv6vQPe3dEW6Aef4auQknsKxo2Rih8iRX4yBwpqWQXVnZ6No27jTGdylEjWg7oQp2IEpQ/lxszltfyergOh42miezIKZPEoa0WzYJolrQxVKIqFVCFXVAuaFOe4JE/yWVMpqkKK5xIc9rLbuoStAUpyopjQqbiHhVgiEY/HRJR82+1+BHbUdh/cdTB0DPWYFfZATa8U8VXRqHyXxVK8mNBiECafs270VDGhgFKICVGIiPFEIpmMCREs6MZWN4T1WBFzl8UatT1+K8fipNnBoJlA7cWjKhRFnOE2pggZKSvlJI2a7BP29W40KSIaDllP4xT8V+uGP9k3/NmtYe9QM4R2I0egCNb1J4DJg5pD86CmVUHHh9xuvcoq6ZwEErGjHh61Y9MaNy/oRrN1qd1oX/rBpKgH71aVHLE+a7GMphqgSljIJ6xPsd2lwVIcD6EG45BX83kzb2olZSSLdaCVoLUguWxOUbScljNQaopyXsgR/SSTGxPGwuPhsb5CO7QjOIgMhwP8cG44G8tFlBBJp5k0ZNJpKS2DiEcyx+dERczJuYySyWXQnqRxqkpEDWtxI5lPqVTTB4RwPJ6ID8a74nf6OocgRL5tCR5LeNYNI50Td07j/PwR1rprqdb8X2td0EtKbbnW2HO01vjbqXXWqTWfI/mTTHaMX6p1G7RhrcPDkb+pdQbSWOuMnMFaZ0NqEk0RAiKQlJAWz6fqFSX1msadmobRrMRFctniNc96YLx7/N5JYq20LmbfePC2Wx9487an33jzu7d6VlmtVoH9hpcJc4kQDJMvfdPD8Xmz+VVEXKquKeQ3x5mhcmQG5uHE3oMLUIKiVBD4sByCIPTn+ysBSRIlSSZW9gEWMQQPKbLeE+dSySZ7wZ3kzFLzLz1gqnlDIT89vK/CRM14ma/xFYlasgIKh1k4um9uAY7Avt5CK9rPFJYAWHchyofj0WiKHAgzq6wZ6/MsCqiSoQcV11zaMf34naW/JQWhQC6TJRk6eoqEsxAgjQhBwuFD65x23mireVESiIg2G9NTCq/yqqCJBgo52v60kc5n8ijFFbVoIELRilAhQ9Z1LJiIZQpyUSjwec5MqUlUXClJ4AROTkIcktmkmiRKQkvlOTykIoqHqeqGnldMVCL7zrI+t5k0OA2RQc65N4PWSeax50Sn+7ADZUmWiCylcURByuHI0kN3MBy+RSq0KoILVOwQlxNCkk+iehGSYkJMyJiQiVORBi6HWBAhCOFzvCqqAuJwmaI5A5EIGlPd1PJoWbRaYVo/mCMcGlC8oGU1RZcy9MlBiFCtURKqMAo1rVooEbNcNtF26zVEDuQN9/P25ezW4VMdowuHx3YuBD1nrdXsxStXWcPWEZYiJ5w0hq4h5MFDN/CnqRW1Yq4EFRiRanyZ8OVEOVoiR+DoHvtcYAYhIA8JASGUjMTjyVSMj/BROYKK0Wv6x4fHgtOpOSAqYAOyUjLtKK4crwh05HTuAbk9ORCJphKJVIxwMZEq1JgaMxLF4Vpskpvkp6Q9sA/mtNniTHF8pDJFzJo2ghOvKpf5klDiC3TEUganp3S0shQAGgiud8yyaJNzOF4aZ4gU45pSAce/kDbThQxCBhhXq2aRYDM1FHMVcWJdMLgCR9ECxQtKTInn4kgQICBGkglRdICizKeRv9i5FXGIo6XBHFpSS6B9xplVkEtQhlKuoOU1RAB5neC3iqZEwSPrHIjINZz7WVCQDaH4p7NpgnoLT5BySVQkcjIOO+rynITYWMqKWXyDSCAhJ0QE0Qg3RE5Mynggkk4g1YlYCvsPPfd+vfsH9+z94ff3eVYttiyabAziYhwxxN32zUwwzAXABwP5odHQSHA8NQ1TMGGOjeyZfuzVM9Z5+RG1gpMcKmIxaSbNhBrFBpbsJ9hoJp5JZpLpZBohjpwSeZFqf7SEKZy0cSqIHJA0iDmkLoozVx0Kw2sSbaFfGdKG9eF8sBghxXAlPpYaTY1L03AcDpT37JmZKR3IHCMTnrAaNWKFWDFZ4quohS8+y/Yc3rnXPTPz8lcZ63yLYyGdyWTSxL7WvoZBtY86QQLUDcipIJtD03OtdS1D2VAWezYno+EKP8faSTsF9kprJVgpK8m88TuKuvJ8nnz1ZYYzOIWKMIWX5JEt1kp75ROPUxRlOihq/eJmdv/+3d3N9mZPz+5d3U32erBX26vBWt0FDGyEM83WZs/+A/v3Na2y/JafBWv9/v37u2DNGdjf1dXFrEGOaJ3/hyvs8+3zr6h//gEbcv4f8LP53dUrfvXaa7/61R2v3XDDHXfccMNrd/yqGZ9p/Zl95sT2++/fvv3+5rQ7EOiLd6NlE3D0yX6PltEQhs7CdLkyQX9rQA7Nzx861Dvf2YzDLKES+f4Dp+6Be+CBrYlvJPWEGgPS2dvb2Tnfe6gZdSGFN4MT4T0C6fL0q75SaCyFswcR5/3bTzzzzIkTzzSrQEnq9OnTx16Cl+B06/QmTKHs0l69hrXXn/GsWbPmnTOATWUokDPZX796xw3NcP0t9rm32JfdYuHfufBrQpvWZPtXLMzNLRzyznfQSnTMew81r7LWY6907e/a3/ROlxtZe6RpDXxmDbyDXRoO12rN1noPpd1N77it4++wtVo43Gyv91B+39S1xv2Zd67+m3yrrFPWv7GQc6wIWhAZSNAt06mCNjaDk4RcvtFDz9PO7AGZBCnbRHGjRkYB8lu3Agg/KBBBY4R2dZYFL98f80V9w8P4EevnveCFfsNX9lWGx6LTsWl+BuYIzBkz5enK9NgYfpRnjDmYgxker0bHhiuY1+gHLzlzwf+Zk6DV3IlXd830H8S8h1PH4BgcNg+MHxyfmcGPA+Zhh2CZh1kK3VSVWF+xbmNOPDZ5Ar4D34nv9037pncVt+NcjqeRbUtoSfgEElJeIBzKKVIT1IgcMtmUkaCHFqdkNJeA7bAr4fMRny/eBS1IVGMa0lSE/ik9iXkRiqCxklSZQip8pn07g6aMTrv62CMT8tge+5JmsJkNaz69K5YWkXKDmZ2FQzDF1ZL50/r3J+H3MJecCo8SxcjPRA8BDBkP7w5og8ogstFBOSA+fGCIB4h25vsVnoSDST9291UvDJ6m9U6kwxF+Z2LwKGaY7kcgMJCdDhOAGlfqAahue7UKQ9kh6jwRuVju0wc3vAMWQymaB49LmlYt7l48h53x1jrhUWLfZDfstK+yr7z4sHVTEzxWOzQzJxZixyefAzhYfOOB/fmDuYOAR3o/98Z3DyYAyOTm2A4Rleduex/7l59r/28zTMenAmOd++4Lfw2+BvfVOrsDw3E/+MhlPxf/0nSL9Vl2YqS/uys0MDQY2rN/38jMJM7UCybraYND9bSJZtp/j7BW42/WIZZuXIefzQEYVoJavpRHW50zS6cAjNh4fALIiydeeOuFh75329Vb7trUDJ3lnrk4jkHWceeYiEc1yEpIc8QSjJKnjpz8/rPzXY/eN7ClvWkIwiPahD5TmsUrtVQlOBQa7AnqMWgCGLxGCsuRTCgb/fK+h38EPyNYl99YjU20Yg8sVawZbth0+y39ybSMtoo854ExvsTrJ7VTI/AmTPCjsUpOM8YTcwAhrb0/rIVyISAhCKXDYvtMSARIeI1AToxF+SAMwa2nQidFQRRT6RhJiL2p4D7MMBbIAgxnR2OARMr0A5TanitBKBunhg7hXTL3hZn7fgy/eq96i5c+zr7u8YX9nB+JUlxFg0+BUR4JzigKpfVh60Ov2x+yzv2aJz0oBlJBLpyMxhKxRJgLCuSrT9s3eWAwF9KSSiKfKCfMVIUbE0aEMXkcQdKoUlPH1VGjZuL8/q3lQ+TASdTIyQmIQUxJGCmdy4sF6rXT0KijRYcygbJUFJBkUmJPLGKdx6IFqsgz6RlhOjVJYjKTSkexKsMppOGRiDaU60USPoidtPVA20i3mhoUfOl+Ivdno7nMQF9sN5KGfmVQD+hDRtiMmZT3JcupEl8USVEqSZV0JV1EFIgwCgEuGXUX8cs5hWIWT/MIr+hpMVfBo4Soo6iVDOquKRbNklk2avoE0ceVSZiBo7EDA7PEfsiusWn3Jmgxesu9legcKpUZc3y0ZhgFtaiUlCLCFTNTyYxkyCh+FYFQsswUYCQ7k5vJjUMpXU4XRTM1FjIDMAAtUW9vtDe2nd8E5CbrUjaF/cinhJTk9KOKIMnAfqTez7ym5w1k1U4/ykXeFEyO9uMq63czrH2L++a7X/xps3Wr56cvvvhPTf/dfVh6rmtiOyKytNZJCZXJFZMnDJMnuqhyWSFjr2Ruufvum5vsm63/xiIIjYRL8WrzP7lrpVKtGi+hKWmw72cjpVi1ybrJXS2Xq9VYOdJs3+SOxGMRtL+rEQKDmEYAj39pSiqRTqIGTKMVBC2nqqpDU4GgHk6reAUJskjOXvDBezAV78k496C2xpvU/889h8+wgLMW2YAuIBcg9oXQ1s4kEjExAhGIaYkiaT9iXwQMB0JaQLmRBSSF13mAU3jKIqhLkix+3u34ODVNU3ACkGssg5UNAfkj2WCtdoOWRn1NnygC+ZIbK5ZGckKJiYj2fIMHi5aQvHBZXheJhdCGqvc0VpqSeTQy2BuMrmWRTiEcCln/ytr3etp7utub7Dfd7T37jjRb93qO7N13pMl6031kb3d7sz1v38ZaF/7SvvCXzKrFaxZbWLvFHUEAmkymkmIcYsTe4YGoFi8kC8mSWEGBaXEj5NQK+NKQWOC5B+FnCS8X4hqFn+YKu8XCw23/wL6GfdC+xo2dEy8mC4mSWMb7r3navsa6xr3K2nqWvWSlZV5wycrDFvbtUtNF2nT7HTdixFxGzVDaSX8tkU9KMx3QkHWAwwbsIjFNx5F2EQ69SDtPwx4hz8NTdpyBTIayO5GS97SMb6RaGQQXmJWOuEw7j1in3E4HKjjqzhTAQVel+iDYNbdm5gykv9mMIZeI9fRBhupxBXPTzDjxK7OsnM7ITajdtGQhRfV6hSjUP5JLy02QUJOUmRaQmRKa0mxF32adJBOPIiq0Cl8VakJNGpempKn0HhTz+cTs4B4yuKen2oFzGOiBPBLJsiYseb9F1MxIZ3jiUFapQ+yJDA4MDiT6oBf60wOSH4+AEBbCfISLklSUS3ApPLgksljUwQgvkFZh03HOBYxQJVKNjvDjMA4jRrVSqRojME6voRZRqT9UdQC2dZl1FZulqMtxAmSW4BtCNIryv7QBMT7Fa5CmYE3BoXIyOkj/wz9gYXn48BYH3mXq2amILMM76mWok4M6tttoXfuB+8i17rRza7r+JLzPqQY+ifzOgYV4a7YOC/9nBwuT3Fh4hKx5h5GQmfEqEe966wuMLuYcuo5CKpCWHQx2peORoKs45Itv3SUyKuXvEnlnDVMNj3NTUF9aIt/5DlOr5sdhithftnawkiEh86OlR2qBvB/8MMyHw6SlhakvbcFgPlAL01JUzGhIRHvliz9hBC2t06WJHNJzWqKmGVQTgI6qhWDtrNzwUpNp76Zpk98Hjp3OpekOEv6dO/dXJJwj9nXUXUJHpi4jsHRjHUVf63n/vXUIXR9MYp3z5N+MKx1V52lpsuF94ypTf48jkM7tOCX+YCH67oz3DOCrJ9YBndBTHtgzsCe2FxHlQnnvHnztLR0CsgB745g+gCiwg1hX2Em6hJDnDXLV75npg6UjaMLmhJnkdGJPdDI4GhwdrPiKA4V+jTrA+8WBJBlIDEWD+IoOJgaSPgHBOvTp/YWB4kBlCPMHJ6J7EmRPYkacxaKOlA5Ok99fxdSn+d9MY3PxUrYbuqVerjflSwzHh2OhWCSKqCOOGDwh81STKLyRIEayGK9EUTRiY7Gx+HRiPjXP7ZP2AR7qfH7enC6OlchYeaSMMlMployCUcSxRAUiG3yRLyZK0XKkEioPl8lwyVfsNXvz3Wo36hR9RTf0FQcn/ROJGdgL+4ozUxOTk7NFWvJsYnJwaqjYD90EehL9/qHBwb4E3mQ1rpCRTCp5xaQrY1kjo4rU4yImEomkGMOfEQ2pOKk7nWvUM14sFahfPKNJWZ564NLUHyCArGAf7LMW2KPJExF4AHb0dW0WiBc8Mr6a/G4prSjNc55WpbcamCDgSWfpcFN3ezaLQH5iPwCTrU85uqAJmAb4xZSjE7E9Inne01ZoqcLTcHjvgac1Mu9RUFk2TbkVRZabMWsPs1eeSYwP5zI4w5x3JoNFDHZjsVQl1JMz+ChPtBTOh1TSuZ095QnJqRTEIVEQaiI5ZBN2TDGLUIJyXA9rjo/9f7D29gx4UNElmt692p1ImcVma7unaJrFpsWr3cV8KtF8m5elgoV42jM55KZqqmkEwE1FqPmEh4ocvbQdk1De0s324/bN7HLq4IQbZUNuCi1f3e5ZLuvEchnWPSugXsz2eh5Axgb1fKP1LBnsSZiYAIY6pZtREm5jKZF/ZvsJx4lw/4ntzzRbDz/OLpUTrJeTxT6BoSFg8ERuDi2XeaJeJp7aD1ufY4/u72prhoiI6h67D9EL5iFe7CJGU1RN0anvG/meY0zlaqIQRXiXSErRjJyRUEWAkBNyoiKooiZTyB+jT0uDhGVxRTT+VXJ0//6jTXXU9c4Ze/27q+nPjZ6NGbDzDMKPs6y12d7s3nhmzZqNZ955BzHFV+hq8Pt0LY/ytaRr73uBakOq/PIKakOcYGlFJrrAUAWm1DVN3ePsLAxrmk6XGwzHFZ0jy35ox/MsIC5jdB3Fg+rWtCaQF765pOiJvdXaylKfkSDQRXic/oLO0AV56rWuAwn6XrKqiN3wp5NEHIUpE0RvAkN93JDBZji2gldEjXzz+/+5Nn/+G7QKFAVapr2VWqPxcI188wUmvGQvAlw4RAb2MCMj1KrUAxbo9f/AnjhhEuSFbzC1Jas0bqJV2jPAhKiXkF4P1CL0+n9gtVYthhfPZTNuSRdUXkGdIGZE8ln7EJMWZVmkB7ad2CNuP8QMsZymoEhR6IoJqp+cewTKCvUqG1VjkrxllRi1ki7zBa6YcHBfD9opCUeaZLOMkHVc6UARFz3oH8Ivia78ZOowTCYOJqtbtvrlDJEFRGw0tMAxXpkMJyMFkRIiJ4s0nwP0ZMQanCcrOhn4NEczSClJoEaKarDMUgbJMV88lpDEIyXy9EH0STRj/UlZukiRXjJ1MnYHvQekONDV7GghVk6SSrIiVrH5NXcZkJjli/k8EizyE9r8Mm0+sU9foI8y4KyM0UUmtMvWlygWceI+aNFECDK0qbSN1JISewO16fWQELyB+DawWAS9V3GgDy1iA7Xt9cAR2iCniEy9o2C5CFSVuaUiVi1+hgbXPON2Oh6bLSLqlcR6ZNAKD5VsVcBJKxlp5DTIdEwqdAaxPoYM/GP2h53VaROo71DJGTlNVTRVz+mgk8UVTgCQpMkaYiiHDEnI936Cjwt9zvo9JDbbv4fQjfhr+DN281b7w6fM79wIQ5dbj9xqhd58Y/F8hgbfpNiBtq7udl+7f0diG2yDHcX2qfbprn0DR+dPLhw4MZUICIPgJ9RbQlHC3tghxA97yxQ+lCmUmBImE+Mn/Au757fR0AAXCziJ0nTAcdDCEBXi8XhCjEKIUqbldCLRuaTQ5UVs2bQ5MYKv8fw0nlAFmJMdp7Ml2licnjYkvf+xjkPbZrfNbCk/BA/Blti2/m19HZ39j0oCYm2B0PgqlZ95dKHzZP/JvidiT8FT8ET55OzJmYVDM4+phhMwtWqx0fKyHCCC1El4/w67iclIdGI65IOODioeWUHlppLN1qbALXg5Xb+MJIZc4qaaBq3q+7x37/MhQpZxQoiQSyjMC9ZH2P/cm1h3JpL/3JtYdyYS8Ba8Yz2I1eGAdRHjcBwUf3wy5R8Zha740cXZ79kPHrY+wuTymmrSOCZ6Ba+hutx/z1+AGdtbmIO55YCrveJcfDY+G5kOjA2P+6p9pb6SV+uh0E3sT/YnfJHAMNl5mBF0Pou0FqcsKkt7tQfErLMG57gukYfkAe0XzteMIeik7ShTLlfNEWPEGFXGkLOMSaP8KFdNlqOVWCGSDxpBdRgCBALSMB/kgslINBaLRpL4kx+WqKIc0gKFgBmsxMaIo+HrfCRN2toYqpCWKczEwJ7A3uh8dJ9wAFHanDZbmi1NV8fGyfhYdRp/z2pzsJfYd//sr4Adlr3ZsAzYyRXvebPr3u1hzzKQ/qA3O4tin3OAzFnW9ly6177abn7dbvrSvHW17fmTtW78Zevil+2LmVX7rfVoZc90ddmr93d50OiaLNqXs7bpxlRqf1fbmz32+i5MpZk2Y6b6OsWaNe+s2bgRPxzbvOadM2fwA220dam1n22Pbzd79vXuTR0vHCH/sPH7IyM/vPcMs1A4npzrme8tbE+0JwvTPgDy7U1zPcEgA9B1MJUn1o57WWuV/VFmfAh2BYaSyShiUTyQCRP7I9Zqxkpax1g7bHPevXaTfWlo951bE6XHzu6vWU3Wpd55K2xxDK3ecdY+bh9/x/LT9Zrj1vE1th/Tb7b+juVFgWsayLoRlyMApmjTugSxIl3ibIJpT9Zt6AKPEMhu8tzmZykYxTdiSR7BBl3ksu9B1JShihTvfegpvFRHtE5Jl+EpGGi28eKP3sh6auVyrakIpqCn8PpT6xX5aeo5qz/CYwv2ZWwGu/OOxYtYI6qGYRgeHe7Y6W3veyD6VSARdxRSghQlwVuoURURTzg6mHSCHGMyYlZUaCAlYgbyrLsCpqFWyOhPmayuqohuVA0VCKm6X4Fnygtzh2fHFuAxGJdrfJmrJIsxg9jP2lV2DPNrCs2NChrFo4b5v1tZmD0yN3oITtbz8+VkIWbGjZA+rIaVwWw/GgwPrRsvx8it9j8zabTQiqigUscnPufWUb6wQBSyrE5OWt9ia6+idTeNCpAR9yTUpCJf4LUkRGCQC4Xi4bhf6KWtdTxnqky929QTcpX1Misf69/bm+5ND+1S2pS2PT3zufncxIH0UWJtQYBqpI92xx5OtXcPeA2vETlsHikc2bdnjicv2atZ4/Hopubso/5AT6YHfOOZE/DY1NzeLLF3W59k5ya729oGu729g/uOHp3cN9/M271sbWrCGIcJGJNr/oOPTARnBo92miHoge6hrQ/Dw9BXbQPSBv7EQ3gSegrp1d7qxMLeQ3vHJms0cOTBxdvZR2H8Kzvsi79utT8Kf7R/osIPrV0/tHdp8AvrmAqvwR0XA8fM016IF6JmQh2EIRq8x8W4aFJAQgJJhS5jC0WxTDojjDFUDFVi1fgIPwazMF4cmahNGDP45D38ZHwsMRooDxrkWasBJu2r4F67HcXvZ1RTBvhQNBKJhvgABCBkRJB38iOo3GigVLVaGcF2knEY4avRSsQIoXqzLt9HozIc74fjG3kgz8gFyRRNHEjDMPU8YlE153B1J19WKIRrA1Pkr74BVHmtPQyn0qBSwj3DLC/KOQhjo+N+zAjplByU+2kIKCeS1n2Mg5nRjKX4KHLmVFLkKayhIIqq0nKkEMsniJiSMD+5n2Pqjp50HQjd46HPfc9/8V2OUVJqUktJKKp8SuCQHUjpZUCG+YxkLTw9SHLvc1mQY3uZvGTKpkzy9zN1lwayAGwjOeO48bJ6zlRGlRlTMZW8Ro51M3WXBUIeo1KuVMyCZtTdS9StmM5FR5Jl3iSqoZpqgXw3z1AQRxUy7TbUxw8ufpwVjgT39Ux2T+7Od/BtfFfI5/V5U936Ts2nB/IhYl9oP8zwqXRKSZL8gwyN51JkFAs02+SowRRzqGAK5JmfL+g/+FdmUp6ESfWQPjNeO1g7qB3mj5KNbayMEGEJtmQI56auLRpJIzsERaKUTKVxNemclKO/qSnGgZQV6sV0emfJRQpokYleYorVsjmijig1qZKoJs2oElSCUigZwQatsX7GpstyUaC++3xKo8vOcSWhRHORLHnt0Ts7f/ToHX2er2/dTzUUn4uRmzSPiOojkxTEFJAuSD1wmsa7Amx4DOC1QwB34PdZppatZEu5Un0FQzV1Gkahm1pBKyilbCU3I00kKiRRCRUGtflqaVo+RO61r2MBSQgCI2QgOPSOq1akkTiYKGYE5xAziOMEEDIkAlGUN/iXCowCoy0tqBgZnR5pI204wc4UN6BqE7IU+gasT7BphBMIsbAgmfqJER5KNOCHJiw/PCNkCU+hmUOE6eK9hFaE/MpDsTiahqpbRdqM8AOcVfwManA8VBpa7TjrFdTs+LRVi2D9G7sU7syhvAjE9tspRuBRHAAPVUAl7rdSjLMaYNBQUF0nP/snpK55NY9Q5yhdDUJ+Rmz202zHfEcv8+Qx9lDP8YO79zOXfo1d2Pvowu4uxmK/wd4Cx+wtzPesLWyb/aC10nqQub3GnoXdB5iBx9mZ/n0zjH1hD3to75eBubufnZnZBMz+R9jdu88Co4bZL4C10n6Q6Zhjr7C+gJesf7/gCvsL1jrrC8zmGvsKfOn1nd2MXdnH3v6lf4QTJxga1b2RnT38dsaTlgSB48ng1Imj+9Horj4M0McsnGWhnK5IFakslrkSX0qa8XzciKlRGk4txfk4l0zxccLFxZgUk6Jp6nmI5aIqXb2OYc54IVXC+8oSmpwKlNWSUcoXTPwoaWW1rFZymEisKzawAQjy0Ug0ylMdaL/thnF+JIrKMmgEsP8u94zDqFGpVip1F/bbdfc26sxRHhXowu+cdQa6QOR49981HSVHQ8Dqayxve5yVAbm+rEIWzfrKwHvO/sUg3XmxzY16X0rhS0LITew/eiCuJsyUmSpKJbxrm7uEZNHEl1qEErHwekkq4mU0H3F86rYOFvPkltQtJYlk47t9ZzxLzlxHO2Ep7zbSR6WXdFzG8dRuWOyzN3gc3Z2uI0zy7obD7NmFDW6rsYO1XAu2y71q2jrF/g5+YW9inu3GEe63HgHG5hbYK+Ftq/F1HO6/t3/N/sLa9DtM/tkC+7zV+BY8bzcy37ngPnr9bfz5TauZRcaXox6Bt90CXWbB/mm0L2dkh8agjGA3EmvOPslQHeTsWEDKgCkWpqhIDbDrMigj2GvK2eWA8cv+tBTFg4fEcWTD2YUFBmmvUicZskJUiaHmAcDhx3UGDPXNE3jmLAvRT2LQ8H4NHNbsxMY6Oyty9QhVxzuZzREaMIuK3pANUSP2OdY5jKjxCu9YvzoZr68m1B0D9EV/EpleA1GQ6UJBGuo83qkKpe3gVIzUN3VgPbG2tNYOPao7PWRy5ZUMdUXU6Z4iE0llqJmmnlKnHOodcMpdKhXqn4TGBgsisocMZYTv1UmuD3a9voRWHZvA04VFYp1jn8NoIo2eoxZSWW67M5WU9/olpxDqXciCpivUieb0J7zXq04fY1WIUzNaT6wtrTWN86QMEIdIIQsLZzcwHOdEzScVBD3kT5e+52NHDWaQvXuZ9/zsr1oxNg2iyNGwM9FZUkDiEzSjhUQhVkqV+UrGcSsTyCkadSwpOGOwOw2xLJUlM0MdFU6IKUUrJOOElBLRWfITpViMj2RCRPZA2BiuBCpDlSCKebSWGE3NJEYFJ9A+V0TrYxiKQZR8brnRWB6nhfNhM6lif99nX812QFehe5x8ZXDqZca/L3EIjsK0OlWYNCfL4zRkaaw0WZgyp7RpmIYpcSpFJpNjcbphqRwwBwuDqh984JN8ycHUYGyYBj4NxwZTxJ/0iz4U4+YVveAV+hL9CX94eDgwHPEn+uL9ohd6obXQPr6btNvEOvcIsz94KHUY5mFOny3OlKaqY2Pj49Up/Elp5jzMI5OeIYnZyBRS6TF/rb/YV/TqvTS8/CtIRlRVFpvtLy5phqHBnuhuhMHe0tCYf27XSBtiymEplCL2pz10lT0SL1WbrB97qiX8pmxHTU2MzhbnabxmfGJ40nsodARh9bg2YhJAurMVATjQ+F0kNPUoyj+6aTAoDY51ojbpfivk55pWd4CS37kxFdWHJqKwcTSCy5msmmCkqZnbunxZUKh79PAFn1q5ajFuZRyvjiSRz13KSAJPQaTEOY87406KitFM0Y2qkn/+E0PDP01EbDT8k1g/dBc1mW+2f/I4G4OoFBOifIJLJcmGdWBJTL1muka9w8i3697Z99Usxzur+k7NbvpgzbZ5rEsfobuZaCgv6i9OSyFaTiALPumGUb4aL8XKET2ENbzOxAShGivHSxE9COQ6dxAiQjweo5sCgs42t5AeKcdKsaowig86gzaiolSMMtq4fIE2ySw61mLVYsT6BftumzsBPAVEUobPcmTSDjPZkJnCWxfXuYtgoMioao7GEExaeCmfMSj24XNYt9D32IwuqYIqaDzdsmdvoHXREyUSqTLxUpRW73N086CM7FSUhTRP+K8u3gniODLulPVblo7GV6z1rIpYCEfjrrvoOoCzbE4XXAn1IDCOM9NZgs3kyF2vUId6HaKjyiHUu8DUYSlVHLkseeUVtAnOJgPH56CqOv39yl3M0jOwxFWL0ousPbx4GYPDQwcHEBQiEhp+F1MQ/zn+S8pXF+n00RTqoQRd0ondtYf91tPfcx9Z8S3rmu/Z17hXvWm9yC6tjSUEZ21MjxUTxfh7S2OlYpEujRGoieUEXolpYRyTuy5Yvml5Qa3k3FRFsEtvKv3/34Sw9AM30SdRr/Hyk/T6TcJfb6LBGSZ7euvJTZu2btu06dS206dPnTzdZP/bf2dPn9pWT9x60kl0YlzuYoMQdoKCP/5TZGlZ6hLUMxoFBJhQTlTFURTXUaOKr/woTMIENxapRBAUDVG2ykciJBLhaFBXur6wIdgX3cLEimGNpgW5SGTp8lA+WI1UI6PcBIw421+IddEtIDAZhzC+d5mfeP/jJug6e6RC6s8jq36w+AB7r+e38FbXmY1n7tn/RbiO/MANVkP7b29947Y3rjtqN+CcXLXi657n4cnAsR3HW8cfhk00y+v9P7z/uw88c8/M7UBeQMUcph0bjycEZ7OOHqMbcCqCM4Q69msJO7ZGO7aCHV5a6tiLKJnuiHX39/X1d8c6YCd0l/tn+mdj+2AB9KyZLZLr7TvdMKyHK9FyrIY0nVin3WNQM8rIDvUajBHrznWeXCrLQYqMWX2sfdo9TPcKId0VwjBMbrc+5Jk5vDD2OJyCheHZncT60I/dMCbUsLxKWB8Gsv9GlpMkrmmnQ+QcZy8lk4c9eVXNNx1251WJa/60fTsLU9x4uFrfpLq0LTaytJbz1y2xH9jZumrxLutqNktNoEgeeogRRbr2QXh3AO40rv/NJX8236RbqVRT08hTTzH1SCYqJ4pAjt+GfDuT4AUSHKZrrXQFAXIDp7ae2ronjUAGwUM2SyYnqHgqOt2ThQSZALy+ndEQ7GUFNOr5RZNth45UZ7gz3OPz9ZCf2B9mzLnRiZnantqcsS9DrM444z+169CjM61T24tbcax32YT1tkQfgQehxWwb2znWMdNzwHfAdzhyTCAvWSzTK3i1vkp/JTARnSXWv1mXsPZlPDPmL/Rnu7M9nDc0QGyP/RXm6fTjxcf2zNamx8emx6crM4W5wpw6T5fQhfnEPLE5gfVBgAvhy4mb9+UDI6GR0DhHTfd4nrr/8+MwTWCaG8f0kUDeR+fMVutcFoJCJIbqOiKgdrQ/aW210eihSter5VKpXNWpzv4kXUp0j6IxpLsuGk+x8C+W63G4nrFXv87anqcsz5MWeZixHrDvopca/+aS52HGlg6y8Aa9chte+QFrf+xZi/59m7HutbexkE87O4Dp+hyxz38GLA/jLL4Yki46aaufY5C5ZJ1AN+SumLCZoXpcEiTeWewB7Kjz72foApDES85qJrFXeuo7N1Q0e7pMrNUbcUBpaLrhbEDBhDNMlk4AIBQhNdEM9S2UeGTVegaEZ5qzKkQN/irLfJwFa7e18WWw72awY65k7Udesx45a23ZwBy5gMYrSYZIw/yw1lvPMvV1IxqlJWGtt27AGtJai7wTxWT30SUq3tmKgB2ACMF2MbpMV4exBjlaxa0WpqiaSh2VWUzGcbt18aOsHbLOZSJGIDOQGEiGosmImErTnTqKPcGgzRBNXpcPD77U8tKOg4N0rVhdQrPUT4R4M0+sgx5q8QWsZrtFGDVv5qtolYvZInZUq/0hRk07y0T2uCee52tNS2GFTqgYsY57EE3Qm1dZ6xajrH3FdX/8nPXp/4f5tf0C6xjHLLnplZvvQmmT6zoUYT75+jHwW9d+xrr2X2DqG610dxleI8i+n2Dty397xS3W5Vcz9uXXsb+9HYta9ypjJ+yb2d/82P70b6//snXZ1cjGj1mfZmFEQ/xWLI1VZ0bGy5VC0SzmcabWqrXiqDFhTChTMEPo7gDqI6JbUch6d3h/S+2r8DVoCYe7yA2U/GboBqgMHZd+xW8MGUPFYBU1UilWpLFpyfEYmQ2ORVC/JrQIhMhuj08OCGEuzHGUBMRKycnkVGpGdEJXtElzqlAs0NjQAldAjJ0f1n0K+ZF1IzuyYJ7MPUtedMvdqYFwIBwYGvYGyOXWN1jqva2KNbEo6nSnuEjniCwK+EqIYTEiDstoU4ZgWIloYS1Boy+xw+mSmIIYUNeLWk2ramPKBErt/Q+wL7pz3za3jXR4x4fonr7x1B55H86U6xFbTsfmkvOS0Bra6e+JvOrrG6il9KSW1DgFsakSiSWCYoCkOZw9KWfvmpQbzoeK0WDYnxpworlC5VIlP6qMEcf+qtQflDHEqfhYqJpwFpmTYlJICf5I135xA/EdCB8VT8yoM8ZUqajjkT82t/fYyONqSS3nSko1S+MpoJAxMwWca1kay1LKFNPpeIYuoMSz8VwiG1PiapxUt8zvONJT5AtcCeHQZ33s3uk9e/f6pnt6Bnw9PXsG9jb3WHPslXYbc9xqfv4fAafSVXYbC69vesN3Gifmces4e2ajvdpaf8bdZa1mL1357uYVf/nFL/7yl8/+4pJLPvvZSy75xWf/4kS4b2aXT5cvN59ZcenKX9pPsdu23fMPDK9Lzi7t1Wdst4fekGDvhs2+rfjybYa74e7pzdSYPOd7EV6E56ZP4Wv6OXiRwIu+5zD91Obpu4G8+/kVD8L20Y6FjoXgCXganh59bGFh4dCJUfwJjwUXOg91jD4KDxJ4MLi9s6Oj49Hgg0BGrR+xnfbF7l+u37Pn1jfB+ijCRT+aotFKNNj87mZPMBoNNr272R2MVkabFzd7RiuV0SZrvY1gIL3xpZfSZwDEM9/8prgRmizT3sxa/q94lCSi5QT58qZNX/7yptOvNkExV1QK5Cu2342Y6ziLMBcb+T8W72c1f2GoFhoJTySnxKGOvvbOTv/gUHAoQkLXf+pT6f/68ivMw77dMnZ87zyDFnX/1BPka3dfk/vzn389wlTHRycnpw4dOjK7MEEOjbEvH/hugS5QJR/Y/VW/EjQoY+BHZbTs1pPWQ6xhFGhBf+xioCKneImD5u1fZ4ATeC5VgqZv/wYfIJQNg4inWDGvmZj39K8xTS8VMvmMxuP5E5vwXE2lUbVGBTy/ohfPI7Joki2H2KScovest1ZiYryqm6qRVzDhn/cxSK6UMp8Xs0E8z9qXYoZ0KC6TwH1sJsKDJJNP+WlJgpiX9WwJM+lnGVBpLLOuVkQ8//VWrLWQaJ5pY7GYJKakP0U7JJqUhUwKLQy5c4qhDjbqrTVpCT96C68XTZNuPjZXA1v+g3X0v7qbVjZU/v28c0bOW/mJhov+S8MKl+u2gWd++YH/6PG//T8is+4P4KZz6eZ9zuCNFN3PDymJ7v+XnH8eoHIGV/+PBMR0/mNAPu/syz/3gwxvs1mnfMjhnIRr3SHsC4oZ+PcYnhHB7MjwRrACf3SPQFUvl0tlowoj5NzlzTd4vPdN97ws731pPvd/AV95+xAAAHicY2BgYGQAgjO2i86D6KtL+LhgNABFIwWeAAB4nGNgZGBg4ANiCQYQYGJgBMIEIGYB8xgACGoAkwAAAHicY2BmYmCcwMDKwMHow5jGwMDgDqW/MkgytDAwMDGwcjLAAKMAAwIEpLmmMDgwKD5gZHzw/wGDHhNUDZi4zXibQQEIGQHoKAuRAAB4nLWQV1JCYQyFv0sHpUgHQYqC0pViwYb0KkWkgztxrSzAPeDv5V2fTCY9MzkngJK9+ZCER9KJSpJrFV8i6oQqfiZ8bqXdTs5CW/ZZ8EPe1cjdZ0q8UKZClRp1GjRp0aZDlx4FrrnhljuK3PPAI0+80mfAkBFvjHHh5hQPEaKcc4GXIH5OCBAiRpwESVKkyXDJFVly5Hlnw4QpM+YCiUJgV6EmLBBpBW49Bg44xIgJMxaOsGLjjGPBzo4DJwuWrFgL3oKD/IDf5Ln0Uq5Ua/VGs9XudHuF65vbu+L9w+PTa38wHL2NXe5TTyR6fuEN+k8CoVg8kUylM5dX2Vz+fTOZzuaSQqlShzVand5wcGg0mS1HVtvZsc/ucC6Wq/Vf1/9dvgEBDSsbAHicY2BkYGAA4nOrWk3j+W2+MnAzMYDA1SV8XDD6/3YGBiZVsDgHA5gCABYHCOwAAHicY2BkYGBiAAI9Job/2//fZlJlYGRABUwAWMkD7gAAeJwljjEKwlAQRB+xMhaGEBBjI5hfBWxSJE3AShAVC21MlSvkGN4gN/Ew3iFX+E72/2GH3b8zw0ZABI6PypH6SZwR82LLg7XWR/3smDV7AXqxI7xGGKTPSVWVOABGqU5s1F9YmDb4e0voOFDK4ah5g5+EHyvNZ7sB+a4sLbmipeA2J/iv+K7rchLLzIyffzqoF6EAAAAAUAAAYQAAeJyVj0FqwzAQRZ8Sx1AaCN1016B9kJGdRSDQ7uoj+ARxgiHY4DhXya4H6lF6hO76nU4X7aIQwaDH19NoBMy54BiXY4E3npDyYjxlxZtxIufDeMa9ezBOWbhnmS65U7K83hp5ov7ReErFq3Ei5914xiOfxilL98SZloFGdaRmR2BPd80COZzboRmO9S7su3YICn6d/oSlhePec1AjT0GmcTxb1f+PfDtr2YGNqhDlIkq1L7v+UPsii37r/wyjZB3DJhQxl3zrRypZPSfdGC0vZ5yXqu5PTdf6PIs39/wCSk1NgQAAeJxjYGZABowMaAAAAI4ABQ==) format("woff");font-weight:400;font-style:normal}[data-icon]:before{content:attr(data-icon)}.icon-facebook-official:before{content:"\61"}.icon-facebook:before{content:"\62"}.icon-facebook-square:before{content:"\63"}.icon-github-2:before{content:"\64"}.icon-github:before{content:"\65"}.icon-tags:before{content:"\67"}.icon-tag:before{content:"\68"}.icon-twitter:before{content:"\69"}.icon-twitter-circled:before{content:"\6a"}.icon-twitter-1:before{content:"\6b"}.icon-home:before{content:"\6c"}.icon-home-1:before{content:"\6d"}.icon-user:before{content:"\6e"}.icon-user-add:before{content:"\6f"}.icon-torsos:before{content:"\70"}.icon-google-plus-square:before{content:"\71"}.icon-google:before{content:"\72"}.icon-paint-brush:before{content:"\73"}.icon-pencil:before{content:"\74"}.icon-comment:before{content:"\78"}.icon-clock:before{content:"\79"}.icon-cloud-download:before{content:"\7a"}.icon-location:before{content:"\41"}.icon-comment-discussion:before{content:"\42"}.icon-clock-o:before{content:"\44"}.icon-heart:before{content:"\49"}.icon-mark-github:before{content:"\76"}.icon-octoface:before{content:"\77"}.icon-social-pinterest:before{content:"\4b"}.icon-social-github:before{content:"\4c"}.icon-tumblr:before{content:"\4d"}.icon-github-1:before{content:"\4a"}.icon-blogger:before{content:"\4e"}.icon-download:before{content:"\66"}.icon-youtube:before{content:"\43"}.icon-popup:before{content:"\75"}.icon-donar:before{content:"\45"}.icon-campana:before{content:"\46"}.icon-chain-broken:before{content:"\47"}.icon-search:before{content:"\48"}.icon-eye:before{content:"\4f"}.icon-dollar:before{content:"\50"}.icon-dollar-bill:before{content:"\51"}.icon-link-external:before{content:"\52"}.icon-link:before{content:"\53"}.icon-book:before{content:"\54"}.icon-bookmark:before{content:"\55"}.icon-css3:before{content:"\56"}.icon-eye-1:before{content:"\57"}.icon-heartbeat:before{content:"\58"}.icon-history:before{content:"\59"}.icon-star:before{content:"\5a"}.icon-versions:before{content:"\30"}.icon-x:before{content:"\31"}.icon-tools:before{content:"\32"}.icon-zap:before{content:"\33"}.icon-like:before{content:"\34"}.icon-paypal:before{content:"\35"}.icon-baidu:before{content:"\36"}.icon-w3:before{content:"\37"}.icon-cog:before{content:"\38"}.icon-key:before{content:"\39"}.icon-btc:before{content:"\21"}.icon-diamond:before{content:"\22"}.icon-money:before{content:"\23"}.icon-credit-card:before{content:"\24"}.icon-diamond-1:before{content:"\25"}.icon-gavel:before{content:"\26"}.icon-whatsapp:before{content:"\27"}.icon-flag:before{content:"\28"}.icon-folder-o:before{content:"\29"}.icon-folder-open-o:before{content:"\2a"}.icon-folder:before{content:"\2b"}.icon-folder-1:before{content:"\2c"}.icon-x-1:before{content:"\2d"}.icon-attention:before{content:"\2e"}.icon-dot-3:before{content:"\2f"}.icon-flickr:before{content:"\3a"}.icon-share:before{content:"\3b"}.icon-rss:before{content:"\3c"}.icon-instagrem:before{content:"\3d"}.icon-telephone:before{content:"\3e"}.icon-chrome:before{content:"\3f"}.icon-delicious:before{content:"\40"}.icon-cubes:before{content:"\5b"}.icon-cube:before{content:"\5d"}.icon-book-1:before{content:"\5e"}.icon-dropbox:before{content:"\5f"}.icon-trophy:before{content:"\60"}.icon-bygian:before{content:"\7b"}.icon-clock-1:before{content:"\7c"}.icon-clock-2:before{content:"\7d"}.icon-clock-3:before{content:"\7e"}.icon-instagram:before{content:"\5c"}.icon-rocket:before{content:"\e000"}.icon-social-yelp:before{content:"\e001"}
+/* cyrillic */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v18/c28rH3kclCLEuIsGhOg7evY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v18/RdfS2KomDWXvet4_dZQehvY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v18/9NqNYV_LP7zlAF8jHr7f1vY6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lobster'), local('Lobster-Regular'), url(https://fonts.gstatic.com/s/lobster/v18/cycBf3mfbGkh66G5NhszPQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face{font-family:RobotoDraft;font-style:normal;font-weight:400;src:local('RobotoDraft'),local('RobotoDraft-Regular'),url(https://fonts.gstatic.com/s/robotodraft/v1/0xES5Sl_v6oyT7dAKuoni4gp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2'),url(https://fonts.gstatic.com/s/robotodraft/v1/0xES5Sl_v6oyT7dAKuoni7rIa-7acMAeDBVuclsi6Gc.woff) format('woff')}
+@font-face{font-family:RobotoDraft;font-style:normal;font-weight:500;src:local('RobotoDraft Medium'),local('RobotoDraft-Medium'),url(https://fonts.gstatic.com/s/robotodraft/v1/u0_CMoUf3y3-4Ss4ci-VwXJuJo8UJJfpGKt7pXjBv4s.woff2) format('woff2'),url(https://fonts.gstatic.com/s/robotodraft/v1/u0_CMoUf3y3-4Ss4ci-VwaTA90I55Xt7owhZwpPnMsc.woff) format('woff')}
+@font-face{font-family:RobotoDraft;font-style:normal;font-weight:700;src:local('RobotoDraft Bold'),local('RobotoDraft-Bold'),url(https://fonts.gstatic.com/s/robotodraft/v1/u0_CMoUf3y3-4Ss4ci-Vwf79_ZuUxCigM2DespTnFaw.woff2) format('woff2'),url(https://fonts.gstatic.com/s/robotodraft/v1/u0_CMoUf3y3-4Ss4ci-VwRbnBKKEOwRKgsHDreGcocg.woff) format('woff')}
+/*end hack*/
+html {font-size: 14px;}
+body{/*start styles*/
+  background: #fff;
+  font-family: RobotoDraft;
+background-image: url(https://lh4.googleusercontent.com/-V4BzWS0dhxk/UwqBLKTC50I/AAAAAAAABv8/GRRy5B0DMXQ/s100-no/fondo-cuadrado.png); /* 1 */
+background-repeat: repeat; /* => 1.1 */
+background-position: top center;
+}
+.mott {
+    font-size: 2rem;
+    display: inline-block;
+    line-height: initial;
+    color: rgba(0, 0, 0, 0.5);
+}
+.info {
+    background-color: rgba(0,0,0,0.05);
+    color: rgba(0,0,0,0.5);
+    display: block;
+    margin: .5rem 0;
+    padding: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+/*container*/
+.container{
+  max-width: 1100px;
+  padding: 0;
+}
+.main,aside{
+  margin-top:.9rem;
+}
+.header{
+  background: rgb(4, 118, 167);
+  border-bottom: 3px solid rgb(0, 136, 194);
+  padding: .3rem 0;
+}
+.header p{
+  color: rgba(255,255,255, 0.85)
+}
+.header a{
+  color: rgba(255,255,255, 0.85)
+}
+/*header*/
+header{
+  background: rgb(255, 255, 255);
+}
+header.container{
+  padding: 0 1rem;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.1)
+}
+.line{
+  background: rgb(4, 118, 167);
+  border-bottom: 3px solid rgb(0, 136, 194);
+  padding: .2rem 0;
+}
+.logo{
+  padding: 0;
+}
+.logo a{
+  font-family: 'Lobster', cursive;
+  font-size: 2.8rem;
+  position: relative;
+  color: rgb(0, 136, 194);
+}
+
+.logo a::before{
+  font-size: 2rem;
+  vertical-align: middle;
+  position: relative;
+  top: -4px
+}
+
+.logo p {
+  color: rgba(124, 124, 124, 0.79)
+}
+
+.logo a:hover,
+.logo a:active,
+.logo a:focus{
+  color: rgba(0, 0, 0, 0.95);
+  text-decoration: none;
+}
+/*menu*/
+.drop-menu{
+position:relative;
+}
+.menu a{
+  margin: 1.55rem .3rem;
+  font-size: .99rem;
+  padding: .5rem .99rem;
+  display: inline-block;
+  background: rgb(0, 136, 194);
+  color: rgba(255, 255, 255, 0.84);
+  border-radius: 50px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px -3px rgba(0, 0, 0, 0.3);
+}
+
+.menu .active{
+  background:  rgb(4, 118, 167);
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.popular {
+    overflow: hidden;
+    margin-bottom:.1rem;
+    width: 100%;
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+.popular:hover,
+.popular:active,
+.popular:focus {
+    text-decoration: none;
+}
+.popular__data {
+    padding: 1rem;
+    display: block;
+    overflow: hidden;
+}
+.popular__title {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-size: .99rem;
+}
+.buscador .popular__title, .publicidad .popular__title, .buscador .popular__resumen, .publicidad .popular__resumen{
+    color: rgba(0, 0, 0, 0.9);
+}
+.popular__resumen {
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: .2rem;
+    font-size: .96rem;
+}
+
+.popular__title, .popular__resumen {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.popular:hover span {
+  color: none;
+}
+.popular__img {
+    width: 60px;
+}
+
+/*Main*/
+.main{
+  width: 69%;
+  background: transparent;
+  margin-bottom:1rem;
+}
+div#Blog1{
+  background: #fff;
+}
+/*aside*/
+aside{
+  width: 30%;;
+}
+aside .widget, .buscador .widget,.publicidad .widget{
+  background: rgb(0, 136, 194);
+  margin-bottom: 1rem;
+}
+.publicidad .widget{
+  margin-bottom: 0rem;
+}
+aside .widget h2,h3.title, .buscador .widget h2, .publicidad .widget h2{
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(255, 255, 255, 0.98);
+  border-bottom-style: solid;
+  padding: .7rem .8rem;
+  margin: 0;
+  background: rgb(4, 118, 167);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.86)
+}
+aside .widget h2::before{
+vertical-align:middle;
+position:relative;
+top:-2px;
+padding-right:.35rem;
+}
+aside .widget h2::before, .buscador .widget h2::before, .publicidad .widget h2::before{
+vertical-align:middle;
+position:relative;
+top:-2px;
+padding-right:.35rem;
+}
+.buscador .widget h2, .publicidad .widget h2{
+  border-bottom-color: rgba(0, 147, 251, 0.84);
+}
+aside .widget .widget-content,.buscador .widget .widget-content, .publicidad .widget .widget-content{
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.92)
+}
+.buscador .widget{
+  background: rgb(255, 255, 255);
+}
+h3.title{
+  border-bottom-color: rgba(0, 147, 251, 0.84);
+  margin: 0;
+}
+h3.title i::before{
+vertical-align:middle;
+position:relative;
+top:-2px;
+}
+/*Custom Label Tags*/
+.tags a{
+  background: rgba(0, 0, 0, 0.15);
+  font-size: .98rem;
+  padding: .55rem .6rem;
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  margin-bottom: .25rem;
+  border-radius:2px;
+}
+.tags a:nth-child(2n+1) {
+    background:rgba(0, 0, 0, 0.2);
+}
+.tags a span{
+  font-weight: 700;
+  font-size: .9rem;
+  color: rgb(213, 213, 213)
+}
+.tags a.here{
+    background:rgba(0, 0, 0, 0.4);
+}
+.buscador .tags a, .publicidad .tags a{
+  background: rgb(4, 118, 167);
+  font-size: .98rem;
+  padding: .55rem .6rem;
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  margin-bottom: .25rem;
+  border-radius:2px;
+}
+.buscador .tags a:nth-child(2n+1), .publicidad .tags a:nth-child(2n+1){
+    background: rgba(4, 118, 167,0.8);
+}
+div#Blog1, aside .widget, header, .buscador .widget{
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px -3px rgba(0, 0, 0, 0.3);
+}
+/* Medium devices */
+@media (max-width: 1110px) {
+.container {
+margin:0 1rem;
+}
+}
+@media (min-width: 768px) {
+    html {font-size: 14px;}
+}
+/* Extra large devices */
+@media (min-width: 1367px) {
+    html {font-size: 14.5px}
+    .container {max-width: 1200px;}
+}
+/* small devices */
+@media (max-width: 590px) {
+    html {font-size: 13px;}
+}
+/*Widget search*/
+.search {
+    position: relative;
+    background: rgba(255,255,255,0.9);
+}
+.search input[type=text] {
+    margin: 0;
+    padding: .7rem 4rem .7rem 1rem;
+    font-size: 1.02rem;
+    color: rgba(0, 0, 0, 0.4);
+    vertical-align: middle;
+    width: 100%;
+    background: transparent;
+    border: 3px solid rgba(0,0,0,0.1);
+    font-weight: 500;
+    box-shadow: 0 0 transparent;
+}
+.search input:focus {
+    outline: 0 none;
+    box-shadow: 0 0 transparent;
+}
+.search button {
+	background:transparent;
+    border: 0;
+    padding: 0 1rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    cursor: pointer;
+    right: 0;
+	border-radius: 2px;
+}
+.search button:hover {
+    opacity: .8;
+}
+.search button::before {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+}
+/*
+Custom Widget FeaturedPost
+*/
+.widg_recomend {
+    margin: 0 auto;
+}
+.widg_recomend [class*=icon-] {
+	background: rgba(0,0,0,0.2);
+    display: block;
+    text-align: center;
+    padding: .7rem 1.5rem;
+    font-size: 1.2rem;
+}
+.widg_recomend [class*=icon-]::before {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+}
+.widg_recomend a {
+    display: block;
+    margin: 0 auto;
+}
+.widg_recomend a img {
+    width: 100%;
+}
+.widg_recomend h3 {
+    font-size: .95rem;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	background: rgba(0,0,0,0.3);
+    padding: 1rem 1.5rem;
+}
+.widg_recomend p {
+	background: rgba(0,0,0,0.13);
+    font-size: .95rem;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 500;
+}
+/*Widget Navegation*/
+.header nav{
+padding-left:.1rem;
+}
+.header a{
+padding: .2rem .35rem;
+display: inline-block;
+transition: background 0.4s;
+font-size:.89rem;
+}
+.header a::before{
+vertical-align:middle;
+position:relative;
+top:-2px;
+font-size:.89rem;
+color:rgba(255,255,255,0.9);
+}
+
+.header a:hover{
+color:rgba(255,255,255,0.7);
+text-decoration: none;
+}
+/*Footer o pie de pagina*/
+footer{
+  background: rgb(255, 255, 255);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px 3px rgba(0, 0, 0, 0.1);
+}
+footer.container{
+  padding:1.5rem;
+  border-top: 3px solid rgba(0, 0, 0, 0.1);
+  text-align:center;
+  font-size:.99rem;
+}
+footer.container p{
+  margin-bottom:.6rem;
+  font-family: 'Lobster', cursive;
+  font-size: 1.7rem;
+  display:block;
+  color: rgba(124, 124, 124, 0.79)
+}
+footer.container span{
+  color: rgba(124, 124, 124, 0.79)
+}
+/*socail footer*/
+.social {
+  display:block;
+  margin:.2rem 0;
+}
+.social a {
+  opacity: .5;
+  margin:0 1px;
+  background:rgba(255, 255, 255, 0.25);
+  padding:.5rem .5rem;
+  display:inline-block;
+}
+.social a:hover {
+    opacity: .8;
+    text-decoration: none;
+}
+.social a::before{
+  vertical-align:middle;
+  font-size:1.2rem;color:#fff; 
+  position:relative;
+  top:0px;
+}
+/*]]>*/</style>
+
+<b:if cond='data:view.isError'>
+<style type='text/css'>/*<![CDATA[*/
+/* => SOLO INDEX */
+.main{
+width:100%;
+}
+.blog{
+background:#fff;
+width:100%;
+}
+.error {
+    font-size: 1.2rem;
+    padding: 2rem;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+}
+.error__title {
+    padding-bottom: .5rem;
+}
+.error__info {
+    padding-bottom: 4rem;
+}
+/*]]>*/</style>
+</b:if>
+
+<b:if cond='data:view.isMultipleItems'>
+<style type='text/css'>/*<![CDATA[*/
+/* => SOLO INDEX */
+.no-entrys{
+    font-size: 1.1rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: block;
+    color: rgba(0,0,0,0.5);width:100%;
+}
+.mott{
+    font-size: 1.6rem;
+    display: inline-block;
+    line-height: initial;
+    color: rgba(0, 0, 0, 0.5);
+}
+/*estilos post index*/
+.items{
+  padding: .4rem;
+}
+.load {
+    width: 33.33%;
+    padding: .3rem;
+}
+.load_content {
+  width: 100%;
+  padding:.4rem;
+}
+.load_image {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+.load_image img{
+    display: block;
+    width: 100%;
+}
+.load_image::before {
+    content: "";
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAEAQMAAACTPww9AAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMATX7+8BUAAAANSURBVHheY/jA0ACCAAsYAnGARcIzAAAAAElFTkSuQmCC) repeat scroll 0 0 rgba(0, 0, 0, .4);
+    height: 100%;
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transition: background .3s, opacity .3s;
+    transition: background .3s, opacity .3s;
+}
+.load_image::after {
+	font-size:1.7rem;
+	font-family:Oliva;
+    content: "\48";
+	margin:auto;
+    position: absolute;
+    left:45.5%;
+    top:40.6%;
+	opacity:0;
+	color:#fff
+}
+.load_content:hover .load_image::before{
+    opacity: 0.8;
+}
+.load_content:hover .load_image::after{
+    opacity: 0.6;
+}
+.load_perfil {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: rgba(252, 252, 252, 0.85);
+  border-style: solid;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+.load_perfil img{
+  border-radius: 50%;
+  width: 100%;
+}
+.load_data{
+    background: rgb(4, 118, 167);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px -3px rgba(0, 0, 0, 0.3);
+}
+.load_data h2{
+    font-size: .95rem;
+    padding: .7rem .5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	margin:0;
+    overflow: hidden;
+    color: rgb(245, 245, 245);
+}
+.load_data h2 a{
+    color: rgb(245, 245, 245);
+    text-transform: normal;
+    text-decoration: none;
+}
+
+.load_data h2{line-height: 18px}
+.load_data time{
+  display: block;
+  padding: .5rem;
+  font-size: .8rem;
+  color:rgba(255, 255, 255, 0.6);
+  background: rgb(0, 136, 194);
+}
+.load_data time::before{
+  font-size:1rem;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+  padding-right: .3rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+.load_data span a{
+  display: block;
+  padding-top: 1rem;
+  color: rgb(255, 255, 255);
+  text-transform: normal;
+  text-decoration: none;text-align: right;
+}
+/*Page-nav*/
+.blog-pager {
+	padding: 0 1rem 1rem 1rem;
+}
+.blog-pager a {
+    display: inline-block;
+    padding: .7rem;
+    background: rgba(0, 147, 251, 0.84);
+    border-radius: 2px;
+    color: #fff;
+    margin-right: .5rem;
+    font-weight: normal;
+    background: rgb(4, 118, 167);
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px -3px rgba(0, 0, 0, 0.3);
+}
+.blog-pager a:active,
+.blog-pager a:focus,
+.blog-pager a:hover {
+    text-decoration: none;
+    background: rgba(0, 147, 251, 0.94);
+	transition: background 0.8s;
+}
+/*]]>*/</style>
+<b:else/>
+
+<style type='text/css'>/*<![CDATA[*/
+/* => TODO MENOS INDEX */
+/**fix comment**/
+.comments{margin-top:-1rem;}
+.comments .comments-content .loadmore.loaded{max-height:0;opacity:0;overflow:hidden;display:none;}
+
+.comments .comments-content .comment-thread ol{list-style-type:none;padding:0;text-align:left}
+
+.comments .comment-block{background-color:#f7f7f7;margin:0 0 0 100px;padding:20px 26px;color:#777;font-size:1rem;line-height:1.6;position:relative}
+
+.avatar-image-container{box-shadow:0 2px 2px -2px rgba(0,0,0,0.2),0 0 2px 0 rgba(0,0,0,0.1);float:left;height:80px;overflow:hidden;position:relative;width:80px;border-radius:4px;margin-top:1rem;background-origin:border-box;background-size:cover}
+
+.avatar-image-container > img{width:100%;}
+
+.comment-replies .avatar-image-container {
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+}
+
+.continue,.item-control{display:none}
+
+.comments .comments-replybox{border:medium none;height:250px;width:100%}
+
+.comments .comment-replybox-single{margin-left:100px;margin-top:0}
+
+.comments .comment-replybox-thread, .comment-form {
+	max-height: 280px;
+}
+
+.comments .thread-chrome.thread-collapsed{display:none}
+
+.comment-header .user,.comment-header .user a{font-style:normal;font-weight:700;color:#555}
+
+.comment-header .user{margin-right:4px}
+
+.avatar-image-container img[src="https://img1.blogblog.com/img/anon36.png"],.avatar-image-container img[src="https://img2.blogblog.com/img/b36-rounded.png"]{opacity:0}
+li.comment {
+    position: relative;
+    margin: 0 0 1rem 0;
+}
+/**fin fix**/
+li.comment {
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    padding: 1rem 0;
+    margin: 0;
+}
+.avatar-image-container {
+    width: 60px;
+    height: 60px;
+    margin: 5px 0 0;
+}
+.comments .comment-block {
+    margin-left: 80px;
+    background: none;
+    padding: 0;
+    font-size: 1rem;
+}
+.comment-content {
+    margin: 0;
+}
+.comment-header span.datetime {
+    font-size: .9em;
+}
+
+.comment-header span.datetime > a {
+    color: #aaa;
+    font-weight: 400;
+}
+
+.thread-toggle {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    z-index: 40;
+}
+.deleted-comment {
+    padding: 1rem;
+    display: block;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+    margin: .5rem 0;
+}
+.thread-toggle a {
+    text-indent: -9999px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center center;
+    opacity: 0.5;
+	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAU0lEQVR4AWOgBxgFHPhEMIEXw2MGHRQRPaCIB24NGxn+M7wCakEofw0U2YDPQTugWhDKd4AcRUALUKEumnLCWtCUE9aCUE6kFphyorUA4SAGowAAbSweD6CmcT8AAAAASUVORK5CYII=');
+}
+
+.thread-toggle.thread-expanded a {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAARUlEQVR4AWMY1GAUNAAhScr/A2EDKcr/ACFcC2HlvxnCGMIhWohVDgQwLYSVh8K4hLU0AJWHQNkILXX47NDCIjIIwSgAAGEBHc5iOzTwAAAAAElFTkSuQmCC');
+}
+.thread-toggle a:hover {
+    opacity: 0.9;
+}
+.comment-replies li.comment {
+    border-bottom: 0 none;
+    margin-left: 5em;
+}
+.comment-replies .comment-block {
+    margin-left: 58px;
+}
+.comentarios .info {
+    margin: 1em 0;
+}
+.info {
+    background-color: rgba(0,0,0,0.05);
+    color: rgba(0,0,0,0.5);
+    display: block;
+    margin: .5rem 0;
+    padding: 1.5rem;
+    text-align: center;
+}
+.avatar-image-container { /* 2 */
+background-image: url(https://2.bp.blogspot.com/-FEtfrzjnhUI/WGa0Ype8HsI/AAAAAAAACC4/ajnTMZIbWuI9P-PP06LyaFGWNNw81I4_ACLcB/s1600/anon.png);
+}
+/*]]>*/</style>
+</b:if>
+
+<b:if cond='data:view.isPost or data:view.isPage'>
+<style type='text/css'>/*<![CDATA[*/
+/* => ENTRADAS */
+div#Blog1{
+  background: transparent;
+  box-shadow: none;
+}
+article, .comentarios{
+background:#fff;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px -3px rgba(0, 0, 0, 0.3);
+margin-bottom:1rem;
+}
+
+article .content,.comentarios .content{
+  padding: 1rem 1.3rem;
+}
+article .content{
+  color:rgba(0,0,0,0.7);
+  line-height: 22px
+}
+.comentarios{
+width:100%;
+position:relative;
+display:block;
+}
+
+/*reformar footer*/
+.reformar{
+  padding: .5rem .7rem 0rem .7rem;
+}
+.reformar .perfil {
+  position: relative;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: rgba(252, 252, 252, 0.85);
+  border-style: solid;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+}
+.reformar .perfil img{
+  border-radius: 50%;
+  width: 100%;
+}
+.reformar time{
+ font-size:0.95rem;
+ color:rgba(00,00,00,0.35);
+ font-weight: 500;
+ text-transform:normal;
+ margin-top:.09rem;
+}
+.reformar time span{
+margin-right:.4rem;
+}
+.reformar time span::before{
+    position: relative;
+    top: 2px;
+    margin-right: .2rem;
+	font-size:0.9rem;
+}
+
+/*estilos dentro de article*/
+article .content blockquote {
+    border-left: 4px solid #EEE;
+    margin: 0 15px;
+    padding: 1rem 2rem;
+    font-style: italic;
+    color: rgba(0, 0, 0, 0.5);
+}
+article .content h1, article .content h2, article .content h3, article .content h4, article .content h5, article .content h6 {
+	color: rgba(0, 0, 0, 0.7);
+    margin: 0 0 1rem;
+}
+article .content ul li, article .content ol li {margin: 0.5em 0 0.5em 2em;}
+article .content ul li {list-style-type: circle;}
+article .content ol li {list-style-type: decimal;}
+article .content img {max-width: 100%;display:block;
+margin:auto;}
+article .content a {font-weight: normal;}
+
+article table {text-align: left;}
+article table tbody td, article table thead th {padding: 1rem;border-bottom: 1px solid rgba(0,0,0,0.08);}
+article table thead {border-bottom: 2px solid rgba(0,0,0,0.08);}
+article table thead th {white-space: nowrap;font-weight: normal;}
+
+table{border-spacing:0;border-collapse:collapse}
+.table{display:block;width:100%;overflow-x:auto}
+
+/*botones de compartir*/
+.share {
+    font-size: .99rem;
+}
+.share a {
+	border-radius:2px;
+	color: rgba(0,0,0,.6);
+    padding: 0.71rem 0.98rem;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    background: rgba(0, 0, 0, 0.1);
+    float: left;
+    -webkit-transition: opacity .2s, color .2s; 
+    transition: opacity .2s, color .2s;
+}
+.share a.icon-facebook {
+    background: #3C5A99;
+    color: #fff;
+}
+
+.share a.icon-facebook:hover {
+    color: #fff;
+}
+.share a::before {
+    display: block;
+	padding-right:.4rem;
+}
+
+.share a:hover,
+.share a:focus,
+.share a:active {
+    opacity: 0.9;
+    color: rgba(0,0,0,.8);
+	text-decoration:none;
+}
+/*]]>*/</style>
+</b:if>
+
+<style type='text/css'>/*<![CDATA[*/
+/* => responsive */
+/*boton*/
+.drop-menu .drop {
+    width: 27px;
+    position: relative;
+    z-index: 80;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    left: -0.5rem;
+}
+.drop-menu .drop span:after, .drop-menu .drop span:before {
+    content: "";
+}
+
+.drop-menu .drop span, .drop-menu .drop span::after, .drop-menu .drop span::before {
+    position: absolute;
+    left: 0;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #999;
+    transition: top .3s,-webkit-transform .3s;
+    -webkit-transition: top .3s,-webkit-transform .3s;
+    transition: transform .3s,top .3s;
+    transition: transform .3s,top .3s,-webkit-transform .3s;
+}
+
+.drop-menu .drop span::before {
+    top: -7px;
+}
+.drop-menu .drop span::after {
+    bottom: -7px;
+}
+
+.drop-menu .drop span {
+    top: 50%;
+    margin-top: -1px;
+}
+
+.drop-menu .drop.open span {
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+}
+
+.drop-menu .drop.open span::before {
+    opacity: 0;
+    top: 0;
+}
+
+.drop-menu .drop.open span::after {
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+@media only screen and (max-width: 890px) {
+.drop-menu {padding: 0.22rem 0 0 0rem;}
+.drop-menu .drop{display: inline-block;margin-top:.99rem;margin-bottom:.99rem;}
+.drop-menu nav {/*ahora nuestro menú es una lista flotante*/
+    position: absolute;
+    z-index: 600;
+    background: #121212;
+    min-width: 20rem;
+    display: none;
+    top: 105%;right: 0;
+}
+.drop-menu nav{
+  flex-wrap: wrap;
+  background: #fff;
+  padding:1rem;
+  width: 100%;
+    }
+.drop-menu nav a{
+  display: block;
+  margin:.2rem 0;
+}
+/*if => open*/
+.drop-menu nav.open {
+  display: block;/*el menu aparece*/
+}
+.main, aside{
+float:none;
+width: 100%;
+}}
+@media only screen and (max-width: 990px) {
+.load {
+width: 50%;
+}}
+@media only screen and (max-width: 550px) {
+.share a span{
+display:none;
+}
+.share a::before {
+	padding-right:0;
+}}
+@media only screen and (max-width: 395px) {
+.load{
+width: 100%;
+}}
+/*]]>*/</style>
+
+<b:skin><![CDATA[
+/*!
+=> Theme Name: {{ NAME }}
+=> Theme URI: {{ URL }}
+=> Author: {{ AUTOR NAME }}
+=> Author URI: {{ AUTOR URL }}
+=> License: Creative Commons Atribucion-NoComercial 4.0 Internacional
+=> License URI: http://creativecommons.org/licenses/by-nc/4.0/
+*/
+/*Deleted: unnecessary elements*/
+.singleton-element:not(.cookie-choices-info),
+.item-control.blog-admin,
+.widget-item-control {display: none;}
+/*Fix: Blogger lightbox*/
+.CSS_LIGHTBOX {z-index: 90001 !important;}
+/*Design: admin blog*/
+body#layout .left {float: left;width: 50%;}
+body#layout .right {float: right;width: 50%;}
+
+/**
+* 1. Css del skin oscuro (dark)
+*/
+.dark footer a,
+.dark footer a:hover,
+.dark footer a:active,
+.dark footer a:focus {
+    color:rgb(255,255,255);
+}
+.dark body{
+  background: rgba(0,0,0,0.7);
+  background-image: url(https://4.bp.blogspot.com/-2WxnhgsmSJk/WQ5R89xrL_I/AAAAAAAACew/RsqBZUhtAwMyh90rVSyMzqm9o5DSJ3kQgCLcB/s1600/bg-3.png); /* 1 */
+  background-repeat: repeat; /* => 1.1 */
+  background-position: top center;
+}
+.dark div#Blog1, .dark header, .dark .buscador .widget .widget-content, .dark .publicidad .widget .widget-content, .dark footer, .dark article, .dark .comentarios{
+  background: rgba(48, 48, 48, 0.85)
+}
+.dark h3.title, .dark .buscador .widget h2, .dark .publicidad .widget h2, .dark aside h2{
+  background: rgba(37, 37, 37, 1);
+  border-color: rgba(255, 255, 255, 1);
+}
+.dark .header, .dark .load_data{
+  background: rgba(37, 37, 37, 1);
+}
+.dark .header{
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.dark .load_data time{
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dark aside .widget, .dark .buscador .widget, .dark .publicidad .widget{
+  background: rgba(48, 48, 48, 0.85)
+}
+.dark h3.title, .dark .logo a{
+  color: rgba(255, 255, 255, 1)
+}
+.dark .menu a{
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.84);
+}
+.dark .menu .active{
+  background:  rgba(0, 0, 0, 0.2);
+}
+.dark article .content, .dark article .content blockquote{
+  color:rgba(255,255,255,0.7);
+}
+
+.dark .reformar time, .dark article .content, .dark .share a {
+  color:rgba(255,255,255,1);
+}
+
+.dark .blog-pager a {
+  background: rgba(37, 37, 37, 1);
+}
+
+.dark  article .content h1, .dark  article .content h2, .dark  article .content h3, .dark  article .content h4, .dark  article .content h5, .dark  article .content h6 {
+	color: rgba(255, 255, 255, 0.7);
+}
+.dark .buscador .tags a,.dark .publicidad .tags a{
+  background: rgba(0, 0, 0, 0.15);
+}
+.dark .buscador .tags a:nth-child(2n+1), .dark .publicidad .tags a:nth-child(2n+1){
+    background:rgba(0, 0, 0, 0.2);
+}
+
+.dark .blog{
+background: rgba(48, 48, 48, 0.85);
+width:100%;
+}
+.dark .error {
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+}
+.dark .comments .comment-block {
+    min-height: 80px;
+    margin: 0 0 1rem 7rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+}
+.dark .comment-content {
+    margin: 0;
+    padding: .5rem 0;
+    color: #7C7B7B;
+    line-height: 1.6rem;
+}
+.dark .deleted-comment {
+    background: #7C7B7B;
+}
+.dark .thread-toggle a {
+	background-image: url('https://3.bp.blogspot.com/-nhydR8BWNx4/WVTq7twSw9I/AAAAAAAAA1g/3JScNeXsgs0oO7X6gL4UHBLVxqc1fkzWwCLcBGAs/s000/open.png');
+}
+
+.dark .thread-toggle.thread-expanded a {
+    background-image: url('https://1.bp.blogspot.com/-GiD5nk3K6jE/WVTrTGcLi5I/AAAAAAAAA1k/xQDLmf5SufEjS8v2OXUQqdjwAVAULAy9QCLcBGAs/s000/close.png');
+}
+@media only screen and (max-width: 890px) {
+.dark .menu a{
+  background: rgba(0, 0, 0,0.4);
+}}
+]]></b:skin>
+
+
+<b:if cond='data:view.isPost or data:view.isPage'>
+<style type='text/css'>/*<![CDATA[*/
+.dark div#Blog1{
+  background: transparent;
+  box-shadow: none;
+}
+/*]]>*/</style>
+</b:if>
+&lt;!--</head>--&gt;&lt;/head&gt;
+
+<body>
+    <!-- Header -->
+    <div class='header'>
+      <div class='container'>
+
+    <b:section id='Enlaces' maxwidgets='1' showaddelement='no'>
+      <b:widget id='LinkList20' locked='true' title='Enlaces del header' type='LinkList' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='link-3'>#2</b:widget-setting>
+          <b:widget-setting name='sorting'>ALPHABETICAL</b:widget-setting>
+          <b:widget-setting name='text-1'>Ayuda</b:widget-setting>
+          <b:widget-setting name='link-1'>#3</b:widget-setting>
+          <b:widget-setting name='text-0'>Acerca de</b:widget-setting>
+          <b:widget-setting name='link-2'>http://</b:widget-setting>
+          <b:widget-setting name='text-3'>Términos y condiciones</b:widget-setting>
+          <b:widget-setting name='link-0'>#1</b:widget-setting>
+          <b:widget-setting name='text-2'>contacto</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='top'>
+                <nav>
+                    <b:loop values='data:links' var='link'>
+                        <a class='icon-location' expr:href='data:link.target'>
+                            <data:link.name/>
+                        </a>
+                    </b:loop>
+                </nav>
+            </b:includable>
+      </b:widget>
+    </b:section>
+      </div>
+    </div>
+<header class='container flex justify-content-between wrap'>
+<b:section class='flex justify-content-center align-items-center align-content-center wrap' id='Header' maxwidgets='1' showaddelement='no'>
+  <b:widget id='Header1' locked='true' title='Oliva (cabecera)' type='Header' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'/>
+      <b:widget-setting name='displayHeight'>0</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>-1</b:widget-setting>
+      <b:widget-setting name='useImage'>false</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      <b:widget-setting name='displayWidth'>0</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+<div class='logo flex justify-content-center align-items-center align-content-center wrap'>
+      <span>
+        <b:if cond='data:useImage'>
+          <b:include name='logo'/>
+          <b:include cond='data:imagePlacement == &quot;BEFORE_DESCRIPTION&quot;' name='description'/>
+		<b:else/>
+			<b:include name='title'/>
+			<b:include cond='data:description' name='description'/>
+		</b:if>
+      </span>
+</div>
+	</b:includable>
+    <b:includable id='description'><!--<p><data:description/></p>--></b:includable>
+    <b:includable id='logo'>
+		<a expr:href='data:blog.homepageUrl' expr:title='data:title'>
+			<img expr:alt='data:title' expr:height='data:height' expr:src='data:sourceUrl' expr:width='data:width'/>
+		</a>
+	</b:includable>
+    <b:includable id='title'>
+			<a class='icon-social-yelp' expr:href='data:blog.homepageUrl' expr:title='data:title'><data:title/></a>
+	</b:includable>
+  </b:widget>
+</b:section>
+<b:section class='main-menu' id='Menú' maxwidgets='1' showaddelement='no'>
+  <b:widget id='PageList1' locked='true' title='Páginas' type='PageList' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='pageListJson'><![CDATA[{'home': {'href': 'https://demo-oliva.blogspot.com/', 'title': 'Home', 'position': 0}, '8005501101320780047': {'href': 'https://demo-oliva.blogspot.com/p/elemento-c.html', 'title': 'Elemento C', 'position': 1}, '876736373395603403': {'href': 'https://demo-oliva.blogspot.com/p/elemento-b.html', 'title': 'Elemento B', 'position': 2}, '3446390734051401947': {'href': 'https://demo-oliva.blogspot.com/p/elemento-a.html', 'title': 'Elemento A', 'position': 3}, 'link0': {'href': 'http://', 'title': 'Faq', 'position': 4}}]]></b:widget-setting>
+      <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+        <!--Menu-->
+    <div class='drop-menu'>
+		<div class='drop'><span/></div>
+      <nav class='menu'>
+          			<b:loop values='data:links' var='link'>
+						<b:if cond='data:link.isCurrentPage'>
+        					<a class='active' expr:href='data:link.href'><data:link.title/></a>
+						<b:else/>
+							<a expr:href='data:link.href'><data:link.title/></a>
+						</b:if>
+					</b:loop>
+    			</nav>
+            </div>
+		</b:includable>
+  </b:widget>
+</b:section>
+</header>
+
+
+<div class='container clearfix'>
+<b:section class='publicidad' cond='data:blog.pageType == &quot;index&quot;' id='publicidad'/>
+</div>
+
+<div class='container clearfix'>
+  <div class='main left'>
+
+<b:section class='buscador' cond='data:blog.pageType == &quot;index&quot;' id='buscador'>
+  <b:widget id='BlogSearch10' locked='false' title='Buscador' type='BlogSearch' version='1'>
+    <b:includable id='main'>
+	<b:if cond='data:title != &quot;&quot;'>
+		<h2 class='icon-search'><span><data:title/></span></h2>
+	</b:if>
+	<div class='widget-content'>
+		<form class='search' expr:action='data:blog.searchUrl' method='get'>
+			<input name='q' onblur='if(this.value==&apos;&apos;) this.value = this.defaultValue' onfocus='if(this.value==this.defaultValue) this.value = &apos;&apos;' type='text' value='Buscar'/>
+			<button class='icon-search' type='submit'/>
+		</form>
+	</div>
+    </b:includable>
+  </b:widget>
+</b:section>
+
+    <!-- Entradas -->
+<div class='blog'>
+<b:if cond='data:view.isError'>
+      <h3 class='title'>Pagina de error</h3>
+	<div class='blog__section error'>
+		<h1 class='error__title'>404 not found</h1>
+		<p class='error__info'>No se encontró nada :( prueba usando el buscador o regresa a la pagina principal.</p>
+	</div>
+<b:else/>
+    <b:section id='Blog' maxwidgets='1'>
+      <b:widget id='Blog1' locked='true' title='Entradas del blog' type='Blog' version='1'>
+        <b:widget-settings>
+          <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+          <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+          <b:widget-setting name='showShareButtons'>true</b:widget-setting>
+          <b:widget-setting name='authorLabel'>By</b:widget-setting>
+          <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+          <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+          <b:widget-setting name='showAuthor'>false</b:widget-setting>
+          <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+          <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+          <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+          <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+          <b:widget-setting name='showLabels'>true</b:widget-setting>
+          <b:widget-setting name='showLocation'>true</b:widget-setting>
+          <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+          <b:widget-setting name='postsPerAd'>2</b:widget-setting>
+          <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+          <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+          <b:widget-setting name='showInlineAds'>true</b:widget-setting>
+          <b:widget-setting name='showReactions'>false</b:widget-setting>
+        </b:widget-settings>
+        <b:includable id='main' var='top'>
+          <b:if cond='data:view.isMultipleItems'>
+       <h3 class='title'>
+		<b:if cond='data:view.isHomepage'>
+          <i class='icon-folder'/> Ultimas entradas
+          <b:elseif cond='data:view.isSearch and not data:view.isLabelSearch'/>
+		  <i class='icon-folder'/> Archivo
+          <b:elseif cond='data:view.isLabelSearch'/>
+		  <i class='icon-tag'/> <data:view.search.label/>
+		</b:if>
+		</h3>
+    <div class='items flex align-items-start wrap'>
+		<b:if cond='data:numPosts == 0'>
+			<div class='no-entrys'>
+			<p><b:if cond='data:blog.searchQuery'>No hay entradas con esos términos de búsqueda<br/><span class='mott'>&#12304;&#9679;Ξ&#9679;&#12305; </span><b:else/>Este blog aún no tiene entradas<br/><span class='mott'> &#180;&#9685;&#65077;&#9685;` </span></b:if></p>
+			</div>
+		<b:else/>
+             <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/><!-- insertamos entradas -->
+             </b:loop></b:if>
+    </div>
+             <b:include name='nextprev'/>
+
+          <b:else/>
+             <b:loop values='data:posts' var='post'>
+                <b:include data='post' name='post'/><!-- insertamos entradas -->
+                <!-- insertamos Comentarios -->
+                <div class='comentarios'>
+                   <b:if cond='!data:view.isPreview'>
+                      <b:if cond='data:post.allowComments'><!-- Si los comentarios estan permitidos -->
+                         <b:include data='post' name='comment-blogger'/><!-- elige entre facebook, disqus o blogger -->
+                      <b:else/><!-- Caso contrario -->
+                         <span class='info'>Esta entrada se encuentra cerrada y no permite comentarios</span>
+                      </b:if>
+                   <b:else/>
+                      <span class='info'>Los comentarios no estan disponibles en la vista previa de la entrada</span>
+                   </b:if>
+                </div>
+             </b:loop>
+          </b:if>
+
+          </b:includable>
+        <b:includable id='backlinkDeleteIcon' var='backlink'><!--none--></b:includable>
+        <b:includable id='backlinks' var='post'><!--none--></b:includable>
+        <b:includable id='comment-blogger' var='post'>
+          <h3 class='title'><data:post.numComments/> Comentario<b:if cond='data:post.numComments &gt; 1 or data:post.numComments == 0'>s</b:if></h3> 
+
+					<div class='content'>  
+          <div class='comments' id='comments'>
+             <div class='comments-content'>
+                <div id='comment-holder'><data:post.commentHtml/></div>
+                <b:include data='post' name='threaded_comment_js'/>
+             </div>
+             <div class='comment-footer'>
+                <b:if cond='data:post.allowNewComments'>
+                   <b:include data='post' name='threaded-comment-form'/>
+                <b:else/>
+                   <span class='info'>No se permiten nuevos comentarios</span>
+                </b:if>
+             		</div>
+             </div>
+             </div>
+          </b:includable>
+        <b:includable id='comment-disqus'>
+
+		<div class='content'>
+             <div id='disqus_thread'/>
+             <script type='text/javascript'>
+             var disqus_shortname = &quot;[Shortname_DISQUS]&quot;;
+             var disqus_url = &quot;<data:blog.canonicalUrl/>&quot;; 
+             //<![CDATA[
+             (function() {
+                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                   dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+             })();
+             //]]></script>
+             <noscript><span class='info'>T-T Lo sentimos, los comentarios requieren javascript</span></noscript>
+          </div>
+          </b:includable>
+        <b:includable id='comment-facebook'>
+             <div id='fb-root'/>
+             <script>//<![CDATA[
+                (function(d, s, id) {
+                   var js, fjs = d.getElementsByTagName(s)[0];
+                   if (d.getElementById(id)) return;
+                   js = d.createElement(s); js.id = id;
+                   js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.8";
+                   fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+             //]]></script>
+             <div class='fb-comments' data-numposts='10' data-width='100%' expr:data-href='data:blog.canonicalUrl'/>
+             <noscript><span class='info'>T-T Lo sentimos, los comentarios requieren javascript</span></noscript>
+          </b:includable>
+        <b:includable id='comment-form' var='post'><!--none--></b:includable>
+        <b:includable id='commentDeleteIcon' var='comment'><!--none--></b:includable>
+        <b:includable id='comment_count_picker' var='post'><!--none--></b:includable>
+        <b:includable id='comment_picker' var='post'><!--none--></b:includable>
+        <b:includable id='comments' var='post'><!--none--></b:includable>
+        <b:includable id='feedLinks'><!--none--></b:includable>
+        <b:includable id='feedLinksBody' var='links'><!--none--></b:includable>
+        <b:includable id='iframe_comments' var='post'><!--none--></b:includable>
+        <b:includable id='mobile-index-post' var='post'><!--none--></b:includable>
+        <b:includable id='mobile-main' var='top'><!--none--></b:includable>
+        <b:includable id='mobile-nextprev'><!--none--></b:includable>
+        <b:includable id='mobile-post' var='post'><!--none--></b:includable>
+        <b:includable id='nextprev'>
+             <div class='blog-pager' id='blog-pager'>
+                <b:if cond='data:newerPageUrl'><a class='newer-link' expr:href='data:newerPageUrl' expr:title='data:newerPageTitle'>Anterior</a></b:if>
+                <b:if cond='data:olderPageUrl'><a class='older-link' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>Siguiente</a></b:if>
+             </div>
+          </b:includable>
+        <b:includable id='post' var='post'>
+             <b:if cond='data:view.isMultipleItems'>
+		<div class='load'>
+        <div class='load_content'>
+		<a expr:href='data:post.url' expr:title='data:post.title'>
+          <div class='load_image'>
+                            <b:if cond='data:post.thumbnailUrl'>
+                                <img expr:alt='data:post.title' expr:src='resizeImage(data:post.thumbnailUrl,280,&quot;16:9&quot;)'/>
+                            <b:else/>
+                                <b:if cond='data:post.firstImageUrl'>
+                                    <img expr:alt='data:post.title' expr:src='resizeImage(data:post.firstImageUrl,280,&quot;16:9&quot;)' expr:title='data:post.title'/>
+                                <b:else/>				
+                                    <img expr:alt='data:post.title' expr:title='data:post.title' src='https://4.bp.blogspot.com/-S82veBwr6GY/WGXba_QzE1I/AAAAAAAACBI/jV5d4YA4iTEbo8xZiZ6l4D8Fcw9ecMVrgCLcB/s280-c/no-image-blogger.png'/>
+                                </b:if>
+                            </b:if>
+
+          </div>
+          <div class='load_data'>
+            <h2><a expr:href='data:post.url'>
+			<div class='load_perfil'>
+              <img expr:src='resizeImage(data:post.authorPhoto.url,35,&quot;1:1&quot;)' expr:title='data:post.author'/>
+            </div> <data:post.title/></a></h2>
+            <time class='icon-clock-3'><data:post.timestamp/></time>
+            <!--<span><a href="">Leer más</a></span>-->
+          </div>
+
+		</a>
+        </div>
+      </div>
+             <!--{{ Pagina principal }}-->
+
+             <b:elseif cond='data:view.isPost'/>
+
+				<article>
+                 <h3 class='title'><data:post.title/></h3>
+
+<div class='reformar'>
+			<div class='perfil'>
+              <img expr:src='resizeImage(data:post.authorPhoto.url,35,&quot;1:1&quot;)' expr:title='data:post.author'/>
+            </div> <time class='published date updated' expr:datetime='data:post.timestampISO8601'><span class='icon-clock'><data:post.timestamp/></span> <span class='icon-comment'><data:post.numComments/> Comentario<b:if cond='data:post.numComments &gt; 1 or data:post.numComments == 0'>s</b:if></span></time>
+</div>
+
+                 <div class='content'><data:post.body/></div>
+               </article>
+
+<div class='comentarios'>
+  <h3 class='title'>Comparte esta articulo</h3>
+    <div class='content'>
+        <b:include name='shareButtons'/>	
+    </div>
+</div>
+             <!--{{ Entradas }}-->
+
+             <b:elseif cond='data:view.isPage'/>
+
+				<article>
+                 <h3 class='title'><data:post.title/></h3>
+
+                 <div class='content'><data:post.body/></div>
+               </article>
+
+             <!--{{ Pagina independiente }}-->
+
+             </b:if>
+
+          </b:includable>
+        <b:includable id='postQuickEdit' var='post'><!--none--></b:includable>
+        <b:includable id='shareButtons'>
+		<div class='share clearfix'>
+            <a class='flex align-items-center icon-facebook' expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url'> <span>compartir</span></a>
+            <a class='flex align-items-center icon-twitter' expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url'> <span>twitter</span></a>
+            <a class='flex align-items-center icon-google' expr:href='&quot;https://plus.google.com/share?url=&quot; + data:post.url'> <span>google+</span></a>
+            <a class='flex align-items-center icon-tumblr' expr:href='&quot;https://www.tumblr.com/share/photo?url=&quot; + data:post.firstImageUrl + &quot;&amp;caption=&quot; + data:post.url'> <span>tumblr</span></a>
+            <a class='flex align-items-center icon-social-pinterest' expr:href='&quot;https://pinterest.com/pin/create/button/?url=&quot; + data:post.url + &quot;&amp;media=&quot; + data:post.firstImageUrl'> <span>pinterest</span></a>
+		</div>
+		</b:includable>
+        <b:includable id='status-message'><!--none--></b:includable>
+        <b:includable id='threaded-comment-form' var='post'>
+             <div class='comment-form'><a name='comment-form'/>
+                <a expr:href='data:post.commentFormIframeSrc' id='comment-editor-src'/>
+                   <iframe allowtransparency='true' class='blogger-iframe-colorize blogger-comment-from-post' expr:height='data:cmtIframeInitialHeight' frameborder='0' id='comment-editor' name='comment-editor' src='' width='100%'/>
+                <data:post.cmtfpIframe/>
+                <script type='text/javascript'>BLOG_CMT_createIframe(&quot;<data:post.appRpcRelayPath/>&quot;);</script>
+             </div>
+          </b:includable>
+        <b:includable id='threaded_comment_js' var='post'>
+             <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
+                <b:template-script inline='true' name='threaded_comments'/>
+                <script type='text/javascript'>blogger.widgets.blog.initThreadedComments(<data:post.commentJso/>,<data:post.commentMsgs/>,<data:post.commentConfig/>);</script>
+             <script type='text/javascript'>//<![CDATA[
+    var a=document.getElementsByClassName("avatar-image-container");for(i=0;i<a.length;i++)a[i].childNodes[0].setAttribute("src",a[i].childNodes[0].getAttribute("src").replace(/s\B\d{2,4}/,"s120-c"));
+    //]]></script>
+          </b:includable>
+        <b:includable id='threaded_comments' var='post'><!--none--></b:includable>
+      </b:widget>
+    </b:section>
+</b:if>
+  </div>  </div>
+
+  <aside class='right'>
+  <b:section class='aside' cond='not data:view.isError' id='sidebar'>
+    <b:widget id='Label10' locked='false' title='Categoría' type='Label' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+        <b:widget-setting name='display'>CLOUD</b:widget-setting>
+        <b:widget-setting name='selectedLabelsList'/>
+        <b:widget-setting name='showType'>ALL</b:widget-setting>
+        <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+      <b:if cond='data:title != &quot;&quot;'>
+          <h2 class='icon-tags'><span><data:title/></span></h2>
+      </b:if>
+      <div class='widget-content'>
+          <div class='tags'>
+              <b:loop values='data:labels' var='label'>
+                  <b:if cond='data:blog.url == data:label.url'>
+                      <a class='here' expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/> <span dir='ltr'><data:label.count/></span></a>
+                  <b:else/>
+                      <a expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/> <span dir='ltr'><data:label.count/></span></a>
+                  </b:if>
+              </b:loop>
+           </div>
+      </div>
+      </b:includable>
+    </b:widget>
+    <b:widget id='FeaturedPost10' locked='false' title='Recomendado' type='FeaturedPost' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='showSnippet'>true</b:widget-setting>
+        <b:widget-setting name='showPostTitle'>true</b:widget-setting>
+        <b:widget-setting name='showFirstImage'>true</b:widget-setting>
+        <b:widget-setting name='useMostRecentPost'>true</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+		<b:if cond='data:title != &quot;&quot;'>
+			<h2 class='icon-zap'><data:title/></h2>
+		</b:if>
+		<div class='widget-content'>
+			<b:include name='content'/>
+		</div>
+	</b:includable>
+      <b:includable id='content'>
+		<div class='widg_recomend'>
+			<a expr:href='data:postUrl'>
+				<img expr:alt='data:postTitle' expr:src='resizeImage(data:postFirstImage,280,&quot;16:9&quot;)'/>
+			</a>
+			<b:if cond='data:showPostTitle and data:postTitle != &quot;&quot;'><h3><data:postTitle/></h3></b:if>
+			<b:if cond='data:showSnippet and data:postSummary != &quot;&quot;'><p><data:postSummary/></p></b:if>
+			<i class='icon-star'/>
+		</div> 
+	</b:includable>
+    </b:widget>
+    <b:widget id='PopularPosts10' locked='false' title='Destacados' type='PopularPosts' version='1'>
+      <b:widget-settings>
+        <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+        <b:widget-setting name='showThumbnails'>true</b:widget-setting>
+        <b:widget-setting name='showSnippets'>true</b:widget-setting>
+        <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+      </b:widget-settings>
+      <b:includable id='main'>
+        <b:if cond='data:title != &quot;&quot;'>
+			<h2 class='icon-star'><span><data:title/></span></h2>
+		</b:if>
+      <div class='widget-content clearfix' style='margin-top:-.8rem;'>
+ 		<b:loop values='data:posts' var='post'>
+				<a class='popular flex align-items-center' expr:href='data:post.href' expr:title='data:post.title'>
+				<b:include name='images'/>
+          		<p class='popular__data'>
+					<b:include name='titles'/>
+					<span class='popular__resumen'><data:post.snippet/></span>
+          		</p>
+				</a>
+		</b:loop>
+      </div>
+     </b:includable>
+      <b:includable id='images'>
+		<b:if cond='data:post.thumbnail'>
+			<img class='popular__img' expr:alt='data:post.title' expr:src='resizeImage(data:post.thumbnail,40,&quot;1:1&quot;)'/>
+		<b:else/>
+			<img class='popular__img' expr:alt='data:post.title' src='https://4.bp.blogspot.com/-S82veBwr6GY/WGXba_QzE1I/AAAAAAAACBI/jV5d4YA4iTEbo8xZiZ6l4D8Fcw9ecMVrgCLcB/w60-h60-c/no-image-blogger.png'/>
+		</b:if>
+	</b:includable>
+      <b:includable id='titles'><span class='popular__title'><data:post.title/></span></b:includable>
+    </b:widget>
+  </b:section>
+  </aside>
+</div>
+
+<footer class='container'>
+<p>&#169;<data:blog.title/> 2017</p> 
+<span>Created by <a data-rel='cc:attributionName' href='http://giancreativo.blogspot.com/' property='cc:attributionName' rel='nofollow' target='_blank'>ByGian</a> | Powered by <a href='https://www.blogger.com' rel='nofollow' target='_blank'>Blogger</a> </span>
+</footer>
+<div class='header'>
+<div class='container flex justify-content-center align-items-center align-content-center wrap'>
+
+        <b:section id='footer-social' maxwidgets='1' showaddelement='no'>
+          <b:widget id='LinkList10' locked='true' title='Redes sociales' type='LinkList' version='1'>
+            <b:widget-settings>
+              <b:widget-setting name='link-5'>https://youtube.com/giancreativo</b:widget-setting>
+              <b:widget-setting name='link-3'>https://google.plus.com/giancreativo</b:widget-setting>
+              <b:widget-setting name='link-4'>https://tumblr.com/giancreativo</b:widget-setting>
+              <b:widget-setting name='text-1'>facebook</b:widget-setting>
+              <b:widget-setting name='text-0'>instagram</b:widget-setting>
+              <b:widget-setting name='text-3'>google</b:widget-setting>
+              <b:widget-setting name='text-2'>twitter</b:widget-setting>
+              <b:widget-setting name='text-5'>youtube</b:widget-setting>
+              <b:widget-setting name='text-4'>tumblr</b:widget-setting>
+              <b:widget-setting name='sorting'>NONE</b:widget-setting>
+              <b:widget-setting name='link-1'>https://facebook.com/giancreativo</b:widget-setting>
+              <b:widget-setting name='link-2'>https://twitter.com/giancreativo</b:widget-setting>
+              <b:widget-setting name='link-0'>http://</b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+                <div class='social'>
+                    <b:loop values='data:links' var='link'>
+                        <a expr:class='&quot;icon-&quot; + data:link.name' expr:href='data:link.target'/>
+                    </b:loop>
+                </div>
+                </b:includable>
+          </b:widget>
+        </b:section>
+</div>
+</div>
+
+<!-- Javascript -->
+<script>//<![CDATA[
+Array.prototype.forEach = function(b, c) {//reemplazo metodo forEach para mejor compatibilidad
+    var a = 0;
+    for (ii = this.length; a < ii; a++) a in this && b.call(c, this[a], a, this)
+};
+Array.prototype.slice.call(document.querySelectorAll(".drop-menu")).forEach(function(b) {//seleccionamos todos los elementos con class "menu"
+    var c = b.querySelector(".drop-menu > .drop"),//variable para el botón
+        a = b.querySelector(".drop-menu > nav");//variable para el menú
+    c.onclick = function(b) {//toggleClass
+        a.className && /(^|\s)open(\s|$)/.test(a.className) ? (a.classList.remove("open"), c.classList.remove("open"), b.preventDefault()) : (a.classList.add("open"), c.classList.add("open"), b.preventDefault())
+    }
+});
+//]]></script>
+
+<script type='text/javascript'>
+//<![CDATA[
+  //!Autor: José Gregorio Materán | modificado: Daniel Abel
+var h=document.querySelector(".share").children;i=0;for(t=h.length;i<t;i++)h[i].onclick=function(a){a.preventDefault();window.open(this.href,"btn-"+i,"width=800,height=400,left="+(screen.width/2-400)+",top="+(screen.height/2-200))};
+//]]>
+</script>
+<!-- Google Analytics -->
+<b:include data='blog' name='google-analytics'/>
+&lt;!--</body>--&gt;&lt;/body&gt;
+
+</html>
