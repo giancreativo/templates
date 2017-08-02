@@ -1103,12 +1103,13 @@ width: 100%;
 
 <b:skin><![CDATA[
 /*!
-=> Theme Name: {{ NAME }}
-=> Theme URI: {{ URL }}
-=> Author: {{ AUTOR NAME }}
-=> Author URI: {{ AUTOR URL }}
-=> License: Creative Commons Atribucion-NoComercial 4.0 Internacional
+=> Theme Name: Oliva
+=> Theme URI: http://giancreativo.blogspot.com/
+=> Author: Gian Imperiale
+=> Author URI: https://fb.com/gianfranco.imperialevivas
+=> License: Creative Commons Reconocimiento-NoComercial 4.0 Internacional
 => License URI: http://creativecommons.org/licenses/by-nc/4.0/
+=> Versión Paga -(Puedes activar la version DARK)-
 */
 /*Deleted: unnecessary elements*/
 .singleton-element:not(.cookie-choices-info),
